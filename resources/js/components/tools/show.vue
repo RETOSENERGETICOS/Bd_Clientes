@@ -23,7 +23,7 @@
                                 <v-combobox label="Giro de la empresa" v-model="tool.turn" item-text="name" :items="turns" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-combobox label="Familia" v-model="tool.family" item-text="name" :items="families" :rules="[rules.required]" clearable item-value="name" disabled></v-combobox>
+                                <v-combobox label="Servicios" v-model="tool.services" item-text="name" :items="servicess" :rules="[rules.required]" clearable item-value="name" disabled></v-combobox>
                             </v-col>
                         </v-row>
                         <v-row>
@@ -126,7 +126,7 @@ export default {
         rules : { required: required },
         countrys: [],
         turns: [],
-        families: [],
+        servicess: [],
         brands: [],
     }),
     methods: {
@@ -141,7 +141,7 @@ export default {
                     country: this.tool.country,
                     measurement: this.tool.measurement,
                     turn: this.tool.turn,
-                    family: this.tool.family,
+                    services: this.tool.services,
                     brand: this.tool.brand,
                     model: this.tool.model,
                     serial_number: this.tool.serial_number,
@@ -180,7 +180,7 @@ export default {
         })
         await axios.get('/api/countrys', getToken()).then(response => this.countrys =  response.data )
         await axios.get('/api/turns', getToken()).then(response => this.turns =  response.data )
-        await axios.get('/api/families', getToken()).then(response => this.families = response.data)
+        await axios.get('/api/servicess', getToken()).then(response => this.servicess = response.data)
         await axios.get('/api/brands', getToken()).then(response => this.brands = response.data)
         this.loading = false
     },

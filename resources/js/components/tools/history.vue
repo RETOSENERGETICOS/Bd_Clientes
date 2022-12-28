@@ -23,7 +23,7 @@ export default {
         loading: false,
         headers: [
             {text: 'Item', value: 'tool.item'},
-            {text: 'Familia', value: 'family.name'},
+            {text: 'Servicios', value: 'services.name'},
             {text: 'Fecha', value: 'created_at'},
             {text: 'Ejecutor', value: 'user.email'},
             {text: 'Actividad', value: 'comment'},

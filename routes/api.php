@@ -32,7 +32,7 @@ Route::middleware('auth:sanctum')->group(static function() {
         'tools' => ToolController::class,
         'countrys' => CountryController::class,
         'turns' => TurnController::class,
-        'families' => FamilyController::class,
+        'servicess' => ServicesController::class,
         'brands' => BrandController::class,
         'uploads' => UploadController::class,
     ]);

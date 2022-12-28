@@ -18,7 +18,7 @@
                     <v-col cols="4" v-if="filters.country.active"><v-select v-model="filter.country" label="Pais" :items="countrys" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.turn.active"><v-select v-model="filter.turn" label="Giro de la empresa" :items="turns" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.brand.active"><v-select v-model="filter.brand" label="Marca" :items="brands" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.family.active"><v-select v-model="filter.family" label="Familia" :items="families" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.services.active"><v-select v-model="filter.services" label="Servicios" :items="servicess" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.hasValidation.active">
                         <p>Sujeto a validacion</p>
                         <v-radio-group v-model="filter.hasValidation" mandatory row>
@@ -69,14 +69,14 @@ export default {
         countrys: [{id: 0, name: 'TODOS'}],
         turns: [{id: 0, name: 'TODOS'}],
         brands: [{id: 0, name: 'TODOS'}],
-        families: [{id: 0, name: 'TODOS'}],
+        servicess: [{id: 0, name: 'TODOS'}],
         users: [{id: 0, email: 'TODOS'}],
         menu: false,
         filter: {
             country: null,
             turn: null,
             brand: null,
-            family: null,
+            services: null,
             hasValidation: false,
             mainLocalization: null,
             shelfLocalization: null,
@@ -93,7 +93,7 @@ export default {
         },
         historyHeaders: [
             {text: 'Item', value: 'tool.item'},
-            {text: 'Familia', value: 'family.name'},
+            {text: 'Servicios', value: 'services.name'},
             {text: 'Fecha', value: 'created_at'},
             {text: 'Ejecutor', value: 'user.email'},
             {text: 'Actividad', value: 'comment'},
@@ -152,10 +152,10 @@ export default {
                 this.brands = this.brands.concat(response.data)
                 this.filter.brand = this.brands[0]
             })
-        axios.get('/api/families', getToken())
+        axios.get('/api/servicess', getToken())
             .then(response => {
-                this.families = this.families.concat(response.data)
-                this.filter.family = this.families[0]
+                this.servicess = this.servicess.concat(response.data)
+                this.filter.services = this.servicess[0]
             })
         axios.get('/api/users', getToken())
           .then(response => {

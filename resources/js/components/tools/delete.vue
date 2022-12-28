@@ -44,7 +44,7 @@ export default {
             {text: 'Pais', value: 'country.name'},
             {text: 'Dimension Principal', value: 'measurement'},
             {text: 'Giro de la empresa', value: 'turn.name'},
-            {text: 'Familia', value: 'family.name'},
+            {text: 'Servicios', value: 'services.name'},
             {text: 'Marca', value: 'brand.name'},
             {text: 'Modelo', value: 'model'},
             {text: '# Serie', value: 'serial_number'},

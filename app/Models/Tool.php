@@ -27,8 +27,8 @@ class Tool extends Model
         return $this->belongsTo(Brand::class);
     }
 
-    public function family(): BelongsTo {
-        return $this->belongsTo(Family::class);
+    public function Services(): BelongsTo {
+        return $this->belongsTo(Services::class);
     }
 
     public function turn(): BelongsTo {

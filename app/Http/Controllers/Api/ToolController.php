@@ -34,7 +34,7 @@ class ToolController extends Controller
                     'country' => $tool->country,
                     'measurement' => $tool->measurement,
                     'turn' => $tool->turn,
-                    'family' => $tool->family,
+                    'services' => $tool->services,
                     'brand' => $tool->brand,
                     'model' => $tool->model,
                     'serial_number' => $tool->serial_number,
@@ -52,7 +52,7 @@ class ToolController extends Controller
             'country' => $tool->country,
             'measurement' => $tool->measurement,
             'turn' => $tool->turn,
-            'family' => $tool->family,
+            'services' => $tool->services,
             'brand' => $tool->brand,
             'model' => $tool->model,
             'serial_number' => $tool->serial_number,
@@ -120,7 +120,7 @@ class ToolController extends Controller
         try {
             $country = $this->getCountry($request->country);
             $turn = $this->getTurn($request->turn);
-            $family = $this->getFamily($request->family);
+            $services = $this->getServices($request->services);
             $brand = $this->getBrand($request->brand);
             $oldTool = json_encode($this->getValues($tool->toArray(), $tool));
             if ($request->main_localization !== $tool->main_localization) {
@@ -138,7 +138,7 @@ class ToolController extends Controller
                 $tool->update([
                     'country_id' => $country->id ?? null,
                     'turn_id' => $turn->id ?? null,
-                    'family_id' => $family->id ?? null,
+                    'services_id' => $services->id ?? null,
                     'brand_id' => $brand->id ?? null,
                     'model' => $request->model,
                     'serial_number' => $request->serial,
@@ -178,12 +178,12 @@ class ToolController extends Controller
     private function createTool(Request $request) {
         $country = $this->getCountry($request->country);
         $turn = $this->getTurn($request->turn);
-        $family = $this->getFamily($request->family);
+        $services = $this->getServices($request->services);
         $brand = $this->getBrand($request->brand);
         $tool = $request->user()->tools()->create([
             'country_id' => $country->id ?? null,
             'turn_id' => $turn->id ?? null,
-            'family_id' => $family->id ?? null,
+            'services_id' => $services->id ?? null,
             'brand_id' => $brand->id ?? null,
             'model' => $request->model,
             'serial_number' => $request->serial,
@@ -207,8 +207,8 @@ class ToolController extends Controller
 
     private function getValues($values, Tool $tool) {
 //        dd($values, $tool);
-        $specialAttributes = ['country_id' => 'country','turn_id' => 'turn','family_id' => 'family','brand_id' => 'brand'];
-        $names = ['item' => 'Item','country' => 'Pais','turn_id' => 'Giro de la empresa','family_id' => 'Familia','brand_id' => 'Marca',
+        $specialAttributes = ['country_id' => 'country','turn_id' => 'turn','services_id' => 'services','brand_id' => 'brand'];
+        $names = ['item' => 'Item','country' => 'Pais','turn_id' => 'Giro de la empresa','services_id' => 'Servicios','brand_id' => 'Marca',
             'model' => 'Modelo','serial_number' => 'Numero de serie','calibration_expiration' => 'Expiracion de calibracion','dispatchable' => 'Despachable',
             'has_validation' => 'Sujeto a validacion', 'main_localization' => 'Localizacion principal', 'shelf_localization' => 'Localizacion de estante', 'shelf' => 'Estante',
             'measurement' => 'Medida', 'min_stock' => 'Stock minimo', 'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
@@ -230,7 +230,7 @@ class ToolController extends Controller
             'country' => $tool->country,
             'measurement' => $tool->measurement,
             'turn' => $tool->turn,
-            'family' => $tool->family,
+            'services' => $tool->services,
             'brand' => $tool->brand,
             'model' => $tool->model,
             'serial_number' => $tool->serial_number,
@@ -246,7 +246,7 @@ class ToolController extends Controller
     }
 
     public function search(Request $request) {
-        $especialKeys = ['country','turn','brand','family','user'];
+        $especialKeys = ['country','turn','brand','services','user'];
         $filters = $request->keys();
         $query = Tool::query();
         foreach($filters as $filter) {
@@ -292,15 +292,15 @@ class ToolController extends Controller
         ]);
     }
 
-    private function getFamily($data)
+    private function getServices($data)
     {
         if (is_null($data)) {
             return null;
         }
         if (is_array($data)) {
-            return Family::find($data['id']);
+            return Services::find($data['id']);
         }
-        return Family::where('name', $data)->firstOrCreate([
+        return Services::where('name', $data)->firstOrCreate([
             'name' => $data
         ]);
     }
