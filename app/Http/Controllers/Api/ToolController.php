@@ -36,10 +36,7 @@ class ToolController extends Controller
                     'turn' => $tool->turn,
                     'services' => $tool->services,
                     'distribution' => $tool->distribution,
-                    'training' => $tool->training,
-                    'serial_number' => $tool->serial_number,
-                    'calibration_expiration' => $tool->calibration_expiration,
-                    'has_validation' => $tool->has_validation
+                    'training' => $tool->training
                 ];
             })
         );

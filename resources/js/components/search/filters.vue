@@ -20,37 +20,18 @@
                     <v-col cols="4" v-if="filters.distribution.active"><v-select v-model="filter.distribution" label="Distribucion" :items="distribution" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.services.active"><v-select v-model="filter.services" label="Servicios" :items="servicess" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.training.active"><v-select v-model="filter.training" label="Capacitacion" :items="trainings" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.hasValidation.active">
-                        <p>Sujeto a validacion</p>
-                        <v-radio-group v-model="filter.hasValidation" mandatory row>
-                            <v-radio label="Si" :value="1"></v-radio>
-                            <v-radio label="No" :value="0"></v-radio>
-                        </v-radio-group>
-                    </v-col>
+                    
                     <v-col cols="4" v-if="filters.mainLocalization.active"><v-text-field v-model="filter.mainLocalization" label="Localizacion principal" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.shelfLocalization.active"><v-text-field v-model="filter.shelfLocalization" label="Localizacion de estante" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.shelf.active"><v-text-field v-model="filter.shelf" label="Estante" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.measurement.active"><v-text-field v-model="filter.measurement" label="Medida" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.dispatchable.active">
-                        <p>Despachable</p>
-                        <v-radio-group v-model="filter.dispatchable" mandatory row>
-                            <v-radio label="Si" :value="1"></v-radio>
-                            <v-radio label="No" :value="0"></v-radio>
-                        </v-radio-group>
-                    </v-col>
+                   
                     <v-col cols="4" v-if="filters.minStock.active"><v-text-field v-model="filter.minStock" label="Inventario minimo" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.quantity.active"><v-text-field v-model.number="filter.quantity" label="Cantidad" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.serialNumber.active"><v-text-field v-model="filter.serialNumber" label="Serie" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.item.active"><v-text-field v-model="filter.item" label="Item" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.user.active"><v-select v-model="filter.user" label="Usuario/User" :items="users" item-text="email" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.calibrationExpiration.active">
-                        <v-menu ref="datePickerMenu" v-model="menu" :close-on-content-click="false" offset-y min-width="auto">
-                            <template v-slot:activator="{on, attrs}">
-                                <v-text-field v-model="filter.calibrationExpiration" label="Vencimiento de calibracion" v-on="on" v-bind="attrs"></v-text-field>
-                            </template>
-                            <v-date-picker v-model="filter.calibrationExpiration" label="Vencimiento de calibracion" no-title></v-date-picker>
-                        </v-menu>
-                    </v-col>
+                    
                 </v-row>
             </v-expansion-panel-content>
         </v-expansion-panel>

@@ -39,13 +39,6 @@
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <p>Sujeto a validacion</p>
-                                <v-radio-group v-model="tool.has_validation" row disabled>
-                                    <v-radio label="Si" :value="true"></v-radio>
-                                    <v-radio label="No" :value="false"></v-radio>
-                                </v-radio-group>
-                            </v-col>
-                            <v-col cols="4">
                                 <v-menu ref="datePickerMenu" v-model="menu" :close-on-content-click="false" offset-y min-width="auto">
                                     <template v-slot:activator="{on, attrs}">
                                         <v-text-field v-model="tool.calibration_expiration" label="Vencimiento de calibracion" v-on="on" v-bind="attrs" :disabled="!tool.has_validation"></v-text-field>
@@ -63,13 +56,6 @@
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="# de estante" v-model="tool.shelf"></v-text-field>
-                            </v-col>
-                            <v-col cols="4">
-                                <p>Despachable</p>
-                                <v-radio-group row v-model="tool.dispatchable">
-                                    <v-radio label="Si" :value="true"></v-radio>
-                                    <v-radio label="No" :value="false"></v-radio>
-                                </v-radio-group>
                             </v-col>
                         </v-row>
                         <v-row>
