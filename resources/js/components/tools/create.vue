@@ -33,7 +33,8 @@
                 </div>
                 <div class="form-column">
                     <div class="form-row">
-                        <v-text-field v-model="tool.model" label="Modelo"></v-text-field>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Capacitacion" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.training" label="Capacitacion" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
                         <v-text-field v-model="tool.serial" label="N de Serie"></v-text-field>
