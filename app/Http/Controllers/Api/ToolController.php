@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Family;
+use App\Models\Country;
+use App\Models\Turn;
+use App\Models\Services;
+use App\Models\Distribution;
+use App\Models\Training;
 use App\Models\File;
 use App\Models\Group;
 use App\Models\Log;
@@ -26,7 +31,7 @@ class ToolController extends Controller
                 return [
                     'id' => $tool->id,
                     'item' => $tool->item,
-                    'description' => $tool->description,
+                    'country' => $tool->country,
                     'measurement' => $tool->measurement,
                     'group' => $tool->group,
                     'family' => $tool->family,
@@ -44,7 +49,7 @@ class ToolController extends Controller
         return response()->json([
             'id' => $tool->id,
             'item' => $tool->item,
-            'description' => $tool->description,
+            'country' => $tool->country,
             'measurement' => $tool->measurement,
             'group' => $tool->group,
             'family' => $tool->family,
@@ -113,6 +118,7 @@ class ToolController extends Controller
     public function update(Request $request, Tool $tool) {
         DB::beginTransaction();
         try {
+            $country = $this->getCountry($request->country);
             $group = $this->getGroup($request->group);
             $family = $this->getFamily($request->family);
             $brand = $this->getBrand($request->brand);
@@ -130,7 +136,7 @@ class ToolController extends Controller
                 ]);
             } else {
                 $tool->update([
-                    'description' => $request->description,
+                    'country_id' => $country->id ?? null,
                     'group_id' => $group->id ?? null,
                     'family_id' => $family->id ?? null,
                     'brand_id' => $brand->id ?? null,
@@ -170,11 +176,12 @@ class ToolController extends Controller
     }
 
     private function createTool(Request $request) {
+        $country = $this->getCountry($request->country);
         $group = $this->getGroup($request->group);
         $family = $this->getFamily($request->family);
         $brand = $this->getBrand($request->brand);
         $tool = $request->user()->tools()->create([
-            'description' => $request->description,
+            'country_id' => $country->id ?? null,
             'group_id' => $group->id ?? null,
             'family_id' => $family->id ?? null,
             'brand_id' => $brand->id ?? null,
@@ -200,8 +207,8 @@ class ToolController extends Controller
 
     private function getValues($values, Tool $tool) {
 //        dd($values, $tool);
-        $specialAttributes = ['group_id' => 'group','family_id' => 'family','brand_id' => 'brand'];
-        $names = ['item' => 'Item','description' => 'Descripcion','group_id' => 'Sub Grupo','family_id' => 'Familia','brand_id' => 'Marca',
+        $specialAttributes = ['country_id' => 'country','group_id' => 'group','family_id' => 'family','brand_id' => 'brand'];
+        $names = ['item' => 'Item','country' => 'Pais','group_id' => 'Sub Grupo','family_id' => 'Familia','brand_id' => 'Marca',
             'model' => 'Modelo','serial_number' => 'Numero de serie','calibration_expiration' => 'Expiracion de calibracion','dispatchable' => 'Despachable',
             'has_validation' => 'Sujeto a validacion', 'main_localization' => 'Localizacion principal', 'shelf_localization' => 'Localizacion de estante', 'shelf' => 'Estante',
             'measurement' => 'Medida', 'min_stock' => 'Stock minimo', 'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
@@ -220,7 +227,7 @@ class ToolController extends Controller
         return [
             'id' => $tool->id,
             'item' => $tool->item,
-            'description' => $tool->description,
+            'country' => $tool->country,
             'measurement' => $tool->measurement,
             'group' => $tool->group,
             'family' => $tool->family,
@@ -239,7 +246,7 @@ class ToolController extends Controller
     }
 
     public function search(Request $request) {
-        $especialKeys = ['group','brand','family','user'];
+        $especialKeys = ['country','group','brand','family','user'];
         $filters = $request->keys();
         $query = Tool::query();
         foreach($filters as $filter) {
@@ -257,6 +264,19 @@ class ToolController extends Controller
             return $this->showTool($tool);
         });
         return response()->json($data);
+    }
+
+    private function getCountry($data)
+    {
+        if (is_null($data)) {
+            return null;
+        }
+        if (is_array($data)) {
+            return Country::find($data['id']);
+        }
+        return Country::where('name', $data)->firstOrCreate([
+            'name' => $data
+        ]);
     }
 
     private function getGroup($data)

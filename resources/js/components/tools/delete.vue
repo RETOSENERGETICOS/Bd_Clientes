@@ -41,7 +41,7 @@ export default {
         loading: false,
         headers: [
             {text: 'ITEM', value: 'item'},
-            {text: 'Descripcion', value: 'description'},
+            {text: 'Pais', value: 'country.name'},
             {text: 'Dimension Principal', value: 'measurement'},
             {text: 'Subgrupo', value: 'group.name'},
             {text: 'Familia', value: 'family.name'},

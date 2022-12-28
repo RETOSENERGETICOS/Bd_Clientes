@@ -14,6 +14,12 @@ class CreateProductsTable extends Migration
     public function up()
     {
 
+        Schema::create('countrys', static function(Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+        });
+        
         Schema::create('groups', static function(Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -35,8 +41,8 @@ class CreateProductsTable extends Migration
         Schema::create('tools', function (Blueprint $table) {
             $table->id();
             $table->string('item')->nullable();
-            $table->string('description');
-            $table->foreignId('group_id')->nullable()->constrained();
+            $table->foreignId('country_id')->nullable()->constrained();
+            $table->foreignId('group_id')->constrained();
             $table->foreignId('family_id')->constrained();
             $table->foreignId('brand_id')->constrained();
             $table->string('model')->nullable();
@@ -64,6 +70,7 @@ class CreateProductsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('tools');
+        Schema::dropIfExists('countrys');
         Schema::dropIfExists('groups');
         Schema::dropIfExists('families');
         Schema::dropIfExists('brands');

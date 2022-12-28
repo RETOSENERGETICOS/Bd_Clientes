@@ -19,6 +19,10 @@ class Tool extends Model
         'dispatchable' => 'boolean'
     ];
 
+    public function country(): BelongsTo {
+        return $this->belongsTo(Country::class);
+    }
+
     public function brand(): BelongsTo {
         return $this->belongsTo(Brand::class);
     }

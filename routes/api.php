@@ -9,6 +9,11 @@ use App\Http\Controllers\Api\{
     ToolController,
     GroupController,
     FamilyController,
+    CountryController,
+    TurnController,
+    ServicesController,
+    DistributionController,
+    TrainingController,
     BrandController,
     UploadController
 };
@@ -25,6 +30,7 @@ Route::middleware('auth:sanctum')->group(static function() {
     Route::apiResources([
         'users' => UserController::class,
         'tools' => ToolController::class,
+        'countrys' => CountryController::class,
         'groups' => GroupController::class,
         'families' => FamilyController::class,
         'brands' => BrandController::class,
