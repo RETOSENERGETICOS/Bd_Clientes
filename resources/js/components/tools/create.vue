@@ -19,8 +19,8 @@
                         <v-select v-else v-model.trim="tool.country" label="Pais" :items="country" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.group" label="Sub Grupo" :items="groups" item-text="name" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.group" label="Sub Grupo" :items="groups" item-text="name" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.turn" label="Giro de la empresa" :items="turns" item-text="name" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.turn" label="Sub Grupo" :items="turns" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.family" label="Familia" :items="families" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
@@ -110,12 +110,12 @@ export default {
         valid: false,
         rules : { required: required },
         countrys: [],
-        groups: [],
+        turns: [],
         families: [],
         brands: [],
         tool: {
             country: null,
-            group: null,
+            turn: null,
             family: null,
             brand: null,
             model: null,
@@ -164,7 +164,7 @@ export default {
         clearForm() {
             this.tool = {
                 country: null,
-                group: null,
+                turn: null,
                 family: null,
                 brand: null,
                 model: null,
@@ -202,7 +202,7 @@ export default {
             }
         })
         await axios.get('/api/countrys', getToken()).then(response => this.countrys =  response.data )
-        await axios.get('/api/groups', getToken()).then(response => this.groups =  response.data )
+        await axios.get('/api/turns', getToken()).then(response => this.turns =  response.data )
         await axios.get('/api/families', getToken()).then(response => this.families = response.data)
         await axios.get('/api/brands', getToken()).then(response => this.brands = response.data)
         this.loading = false

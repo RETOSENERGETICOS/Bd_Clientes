@@ -20,7 +20,7 @@
                                 <v-combobox label="Pais" v-model="tool.country" item-text="name" :items="countrys" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-combobox label="Subgrupo" v-model="tool.group" item-text="name" :items="groups" clearable item-value="name"></v-combobox>
+                                <v-combobox label="Giro de la empresa" v-model="tool.turn" item-text="name" :items="turns" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
                                 <v-combobox label="Familia" v-model="tool.family" item-text="name" :items="families" :rules="[rules.required]" clearable item-value="name" disabled></v-combobox>
@@ -125,7 +125,7 @@ export default {
         menu: false,
         rules : { required: required },
         countrys: [],
-        groups: [],
+        turns: [],
         families: [],
         brands: [],
     }),
@@ -140,7 +140,7 @@ export default {
                     item: this.tool.item,
                     country: this.tool.country,
                     measurement: this.tool.measurement,
-                    group: this.tool.group,
+                    turn: this.tool.turn,
                     family: this.tool.family,
                     brand: this.tool.brand,
                     model: this.tool.model,
@@ -179,7 +179,7 @@ export default {
             }
         })
         await axios.get('/api/countrys', getToken()).then(response => this.countrys =  response.data )
-        await axios.get('/api/groups', getToken()).then(response => this.groups =  response.data )
+        await axios.get('/api/turns', getToken()).then(response => this.turns =  response.data )
         await axios.get('/api/families', getToken()).then(response => this.families = response.data)
         await axios.get('/api/brands', getToken()).then(response => this.brands = response.data)
         this.loading = false

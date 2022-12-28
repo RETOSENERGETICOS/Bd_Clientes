@@ -31,8 +31,8 @@ class Tool extends Model
         return $this->belongsTo(Family::class);
     }
 
-    public function group(): BelongsTo {
-        return $this->belongsTo(Group::class);
+    public function turn(): BelongsTo {
+        return $this->belongsTo(Turn::class);
     }
 
     public function files(): MorphMany {

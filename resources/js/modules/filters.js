@@ -4,7 +4,7 @@ export default {
         items: [],
         filters: {
             country: { text: 'Pais', value: 'country.name' ,active: true, key: 'country' },
-            group: { text: 'Sub Grupo', value: 'group.name' ,active: true, key: 'group' },
+            turn: { text: 'Giro de la empresa', value: 'turn.name' ,active: true, key: 'turn' },
             brand: { text: 'Marca', value: 'brand.name', active: true, key: 'brand' },
             family: { text: 'Familia', value: 'family.name', active: true, key: 'family' },
             hasValidation: { text: 'Sujeto a validacion', value: 'has_validation', active: false, key: 'has_validation' },

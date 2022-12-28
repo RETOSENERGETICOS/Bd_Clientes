@@ -33,7 +33,7 @@ class ToolController extends Controller
                     'item' => $tool->item,
                     'country' => $tool->country,
                     'measurement' => $tool->measurement,
-                    'group' => $tool->group,
+                    'turn' => $tool->turn,
                     'family' => $tool->family,
                     'brand' => $tool->brand,
                     'model' => $tool->model,
@@ -51,7 +51,7 @@ class ToolController extends Controller
             'item' => $tool->item,
             'country' => $tool->country,
             'measurement' => $tool->measurement,
-            'group' => $tool->group,
+            'turn' => $tool->turn,
             'family' => $tool->family,
             'brand' => $tool->brand,
             'model' => $tool->model,
@@ -119,7 +119,7 @@ class ToolController extends Controller
         DB::beginTransaction();
         try {
             $country = $this->getCountry($request->country);
-            $group = $this->getGroup($request->group);
+            $turn = $this->getTurn($request->turn);
             $family = $this->getFamily($request->family);
             $brand = $this->getBrand($request->brand);
             $oldTool = json_encode($this->getValues($tool->toArray(), $tool));
@@ -137,7 +137,7 @@ class ToolController extends Controller
             } else {
                 $tool->update([
                     'country_id' => $country->id ?? null,
-                    'group_id' => $group->id ?? null,
+                    'turn_id' => $turn->id ?? null,
                     'family_id' => $family->id ?? null,
                     'brand_id' => $brand->id ?? null,
                     'model' => $request->model,
@@ -177,12 +177,12 @@ class ToolController extends Controller
 
     private function createTool(Request $request) {
         $country = $this->getCountry($request->country);
-        $group = $this->getGroup($request->group);
+        $turn = $this->getTurn($request->turn);
         $family = $this->getFamily($request->family);
         $brand = $this->getBrand($request->brand);
         $tool = $request->user()->tools()->create([
             'country_id' => $country->id ?? null,
-            'group_id' => $group->id ?? null,
+            'turn_id' => $turn->id ?? null,
             'family_id' => $family->id ?? null,
             'brand_id' => $brand->id ?? null,
             'model' => $request->model,
@@ -207,8 +207,8 @@ class ToolController extends Controller
 
     private function getValues($values, Tool $tool) {
 //        dd($values, $tool);
-        $specialAttributes = ['country_id' => 'country','group_id' => 'group','family_id' => 'family','brand_id' => 'brand'];
-        $names = ['item' => 'Item','country' => 'Pais','group_id' => 'Sub Grupo','family_id' => 'Familia','brand_id' => 'Marca',
+        $specialAttributes = ['country_id' => 'country','turn_id' => 'turn','family_id' => 'family','brand_id' => 'brand'];
+        $names = ['item' => 'Item','country' => 'Pais','turn_id' => 'Giro de la empresa','family_id' => 'Familia','brand_id' => 'Marca',
             'model' => 'Modelo','serial_number' => 'Numero de serie','calibration_expiration' => 'Expiracion de calibracion','dispatchable' => 'Despachable',
             'has_validation' => 'Sujeto a validacion', 'main_localization' => 'Localizacion principal', 'shelf_localization' => 'Localizacion de estante', 'shelf' => 'Estante',
             'measurement' => 'Medida', 'min_stock' => 'Stock minimo', 'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
@@ -229,7 +229,7 @@ class ToolController extends Controller
             'item' => $tool->item,
             'country' => $tool->country,
             'measurement' => $tool->measurement,
-            'group' => $tool->group,
+            'turn' => $tool->turn,
             'family' => $tool->family,
             'brand' => $tool->brand,
             'model' => $tool->model,
@@ -246,7 +246,7 @@ class ToolController extends Controller
     }
 
     public function search(Request $request) {
-        $especialKeys = ['country','group','brand','family','user'];
+        $especialKeys = ['country','turn','brand','family','user'];
         $filters = $request->keys();
         $query = Tool::query();
         foreach($filters as $filter) {
@@ -279,15 +279,15 @@ class ToolController extends Controller
         ]);
     }
 
-    private function getGroup($data)
+    private function getTurn($data)
     {
         if (is_null($data)) {
             return null;
         }
         if (is_array($data)) {
-            return Group::find($data['id']);
+            return Turn::find($data['id']);
         }
-        return Group::where('name', $data)->firstOrCreate([
+        return Turn::where('name', $data)->firstOrCreate([
             'name' => $data
         ]);
     }

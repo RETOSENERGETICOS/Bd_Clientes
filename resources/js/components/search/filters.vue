@@ -16,7 +16,7 @@
                 </v-row>
                 <v-row>
                     <v-col cols="4" v-if="filters.country.active"><v-select v-model="filter.country" label="Pais" :items="countrys" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.group.active"><v-select v-model="filter.group" label="Sub Grupo" :items="groups" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.turn.active"><v-select v-model="filter.turn" label="Giro de la empresa" :items="turns" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.brand.active"><v-select v-model="filter.brand" label="Marca" :items="brands" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.family.active"><v-select v-model="filter.family" label="Familia" :items="families" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.hasValidation.active">
@@ -67,14 +67,14 @@ export default {
     data: () => ({
         panel: 0,
         countrys: [{id: 0, name: 'TODOS'}],
-        groups: [{id: 0, name: 'TODOS'}],
+        turns: [{id: 0, name: 'TODOS'}],
         brands: [{id: 0, name: 'TODOS'}],
         families: [{id: 0, name: 'TODOS'}],
         users: [{id: 0, email: 'TODOS'}],
         menu: false,
         filter: {
             country: null,
-            group: null,
+            turn: null,
             brand: null,
             family: null,
             hasValidation: false,
@@ -142,10 +142,10 @@ export default {
                 this.countrys = this.countrys.concat(response.data)
                 this.filter.country = this.groups[0]
             })
-        axios.get('/api/groups', getToken())
+        axios.get('/api/turns', getToken())
             .then(response => {
-                this.groups = this.groups.concat(response.data)
-                this.filter.group = this.groups[0]
+                this.turns = this.turns.concat(response.data)
+                this.filter.turn = this.turns[0]
             })
         axios.get('/api/brands', getToken())
             .then(response => {

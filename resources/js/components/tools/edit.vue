@@ -32,7 +32,7 @@ export default {
             { text: 'ITEM', value: 'item' },
             { text: 'Pais', value: 'country.name' },
             { text: 'Dimension Principal', value: 'measurement' },
-            { text: 'Subgrupo', value: 'group.name' },
+            { text: 'Giro de la empresa', value: 'turn.name' },
             { text: 'Familia', value: 'family.name' },
             { text: 'Marca', value: 'brand.name' },
             { text: 'Modelo', value: 'model' },
