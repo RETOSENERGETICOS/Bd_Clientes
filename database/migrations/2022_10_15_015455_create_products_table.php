@@ -38,6 +38,12 @@ class CreateProductsTable extends Migration
            $table->timestamps();
         });
 
+        Schema::create('trainings', static function(Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+         });
+
         Schema::create('tools', function (Blueprint $table) {
             $table->id();
             $table->string('item')->nullable();
@@ -45,7 +51,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('turn_id')->constrained();
             $table->foreignId('services_id')->constrained();
             $table->foreignId('distribution_id')->constrained();
-            $table->string('model')->nullable();
+            $table->foreignId('training_id')->constrained();
             $table->string('serial_number')->unique()->nullable();
             $table->date('calibration_expiration')->nullable();
             $table->boolean('dispatchable')->default(false);
@@ -74,5 +80,6 @@ class CreateProductsTable extends Migration
         Schema::dropIfExists('turns');
         Schema::dropIfExists('servicess');
         Schema::dropIfExists('distributions');
+        Schema::dropIfExists('trainings');
     }
 }

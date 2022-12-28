@@ -19,6 +19,7 @@
                     <v-col cols="4" v-if="filters.turn.active"><v-select v-model="filter.turn" label="Giro de la empresa" :items="turns" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.distribution.active"><v-select v-model="filter.distribution" label="Distribucion" :items="distribution" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.services.active"><v-select v-model="filter.services" label="Servicios" :items="servicess" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.training.active"><v-select v-model="filter.training" label="Capacitacion" :items="trainings" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.hasValidation.active">
                         <p>Sujeto a validacion</p>
                         <v-radio-group v-model="filter.hasValidation" mandatory row>
@@ -39,7 +40,6 @@
                     </v-col>
                     <v-col cols="4" v-if="filters.minStock.active"><v-text-field v-model="filter.minStock" label="Inventario minimo" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.quantity.active"><v-text-field v-model.number="filter.quantity" label="Cantidad" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.model.active"><v-text-field v-model="filter.model" label="Modelo" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.serialNumber.active"><v-text-field v-model="filter.serialNumber" label="Serie" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.item.active"><v-text-field v-model="filter.item" label="Item" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.user.active"><v-select v-model="filter.user" label="Usuario/User" :items="users" item-text="email" return-object clearable></v-select></v-col>
@@ -70,6 +70,7 @@ export default {
         turns: [{id: 0, name: 'TODOS'}],
         distributions: [{id: 0, name: 'TODOS'}],
         servicess: [{id: 0, name: 'TODOS'}],
+        trainings: [{id: 0, name: 'TODOS'}],
         users: [{id: 0, email: 'TODOS'}],
         menu: false,
         filter: {
@@ -77,6 +78,7 @@ export default {
             turn: null,
             distribution: null,
             services: null,
+            training: null,
             hasValidation: false,
             mainLocalization: null,
             shelfLocalization: null,
@@ -156,6 +158,11 @@ export default {
             .then(response => {
                 this.servicess = this.servicess.concat(response.data)
                 this.filter.services = this.servicess[0]
+            })
+        axios.get('/api/trainings', getToken())
+            .then(response => {
+                this.trainings = this.trainings.concat(response.data)
+                this.filter.training = this.trainings[0]
             })
         axios.get('/api/users', getToken())
           .then(response => {

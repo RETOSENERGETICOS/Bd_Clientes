@@ -35,7 +35,7 @@ export default {
             { text: 'Giro de la empresa', value: 'turn.name' },
             { text: 'Servicios', value: 'services.name' },
             { text: 'Distribucion', value: 'distribution.name' },
-            { text: 'Modelo', value: 'model' },
+            { text: 'Capacitacion', value: 'training.name' },
             { text: '# Serie', value: 'serial_number' },
             { text: 'Vencimiento de calibracion', value: 'calibration_expiration' },
             { text: 'Sujeto a validacion', value: 'has_validation' },

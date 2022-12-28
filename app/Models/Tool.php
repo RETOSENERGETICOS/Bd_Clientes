@@ -27,12 +27,16 @@ class Tool extends Model
         return $this->belongsTo(Distribution::class);
     }
 
-    public function Services(): BelongsTo {
+    public function services(): BelongsTo {
         return $this->belongsTo(Services::class);
     }
 
     public function turn(): BelongsTo {
         return $this->belongsTo(Turn::class);
+    }
+
+    public function training(): BelongsTo {
+        return $this->belongsTo(Training::class);
     }
 
     public function files(): MorphMany {

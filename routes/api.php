@@ -33,6 +33,7 @@ Route::middleware('auth:sanctum')->group(static function() {
         'turns' => TurnController::class,
         'servicess' => ServicesController::class,
         'distributions' => DistributionController::class,
+        'trainings' => TrainingController::class,
         'uploads' => UploadController::class,
     ]);
 });

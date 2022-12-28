@@ -42,7 +42,7 @@ export default {
         loading: false,
         search: null,
         headers: [],
-        specialKeys: ['country','turn','services','distribution'],
+        specialKeys: ['country','turn','services','distribution','training'],
         historyHeaders: [
             {text: 'Item', value: 'tool.item'},
             {text: 'Servicios', value: 'services.name'},

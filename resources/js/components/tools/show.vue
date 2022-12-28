@@ -31,7 +31,7 @@
                                 <v-combobox label="Distribucion" v-model="tool.distribution" item-text="name" :items="distributions" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Modelo" v-model="tool.model"></v-text-field>
+                                <v-combobox label="Capacitacion" v-model="tool.training" item-text="name" :items="trainings" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="# Serie" v-model="tool.serial" disabled></v-text-field>
@@ -128,6 +128,7 @@ export default {
         turns: [],
         servicess: [],
         distributions: [],
+        trainings: [],
     }),
     methods: {
         async update() {
@@ -143,7 +144,7 @@ export default {
                     turn: this.tool.turn,
                     services: this.tool.services,
                     distribution: this.tool.distribution,
-                    model: this.tool.model,
+                    training: this.tool.training,
                     serial_number: this.tool.serial_number,
                     calibration_expiration: this.tool.calibration_expiration,
                     has_validation: this.tool.has_validation
@@ -182,6 +183,7 @@ export default {
         await axios.get('/api/turns', getToken()).then(response => this.turns =  response.data )
         await axios.get('/api/servicess', getToken()).then(response => this.servicess = response.data)
         await axios.get('/api/distributions', getToken()).then(response => this.distributions = response.data)
+        await axios.get('/api/trainings', getToken()).then(response => this.trainings = response.data)
         this.loading = false
     },
     components: {

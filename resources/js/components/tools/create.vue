@@ -15,16 +15,16 @@
             <div class="form-container">
                 <div class="form-column">
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.country" label="Pais" :items="country" item-text="name" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.country" label="Pais" :items="country" item-text="name" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.country" label="Pais" :items="countrys" item-text="name" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.country" label="Pais" :items="countrys" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.turn" label="Giro de la empresa" :items="turns" item-text="name" clearable item-value="name"></v-combobox>
                         <v-select v-else v-model.trim="tool.turn" label="Sub Grupo" :items="turns" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.services" label="Servicios" :items="servicess" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.services" label="Servicios" :items="servicess" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Servicios" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.training" label="Servicios" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.distribution" label="Distribucion" :items="distributions" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
@@ -113,12 +113,13 @@ export default {
         turns: [],
         servicess: [],
         distributions: [],
+        trainings: [],
         tool: {
             country: null,
             turn: null,
             services: null,
             distribution: null,
-            model: null,
+            training: null,
             serial: null,
             calibration_expiration: null,
             has_validation: false,
@@ -167,7 +168,7 @@ export default {
                 turn: null,
                 services: null,
                 distribution: null,
-                model: null,
+                training: null,
                 serial: null,
                 calibrationExpiration: null,
                 hasValidation: false,
@@ -205,6 +206,7 @@ export default {
         await axios.get('/api/turns', getToken()).then(response => this.turns =  response.data )
         await axios.get('/api/servicess', getToken()).then(response => this.servicess = response.data)
         await axios.get('/api/distributions', getToken()).then(response => this.distributions = response.data)
+        await axios.get('/api/trainings', getToken()).then(response => this.trainings = response.data)
         this.loading = false
     },
     components: {
