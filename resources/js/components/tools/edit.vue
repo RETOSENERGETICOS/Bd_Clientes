@@ -34,7 +34,7 @@ export default {
             { text: 'Dimension Principal', value: 'measurement' },
             { text: 'Giro de la empresa', value: 'turn.name' },
             { text: 'Servicios', value: 'services.name' },
-            { text: 'Marca', value: 'brand.name' },
+            { text: 'Distribucion', value: 'distribution.name' },
             { text: 'Modelo', value: 'model' },
             { text: '# Serie', value: 'serial_number' },
             { text: 'Vencimiento de calibracion', value: 'calibration_expiration' },

@@ -14,7 +14,7 @@ use App\Http\Controllers\Api\{
     ServicesController,
     DistributionController,
     TrainingController,
-    BrandController,
+    DistributionController,
     UploadController
 };
 
@@ -33,7 +33,7 @@ Route::middleware('auth:sanctum')->group(static function() {
         'countrys' => CountryController::class,
         'turns' => TurnController::class,
         'servicess' => ServicesController::class,
-        'brands' => BrandController::class,
+        'distributions' => DistributionController::class,
         'uploads' => UploadController::class,
     ]);
 });

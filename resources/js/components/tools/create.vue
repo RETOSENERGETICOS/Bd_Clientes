@@ -27,8 +27,8 @@
                         <v-select v-else v-model.trim="tool.services" label="Servicios" :items="servicess" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.brand" label="Marca" :items="brands" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.brand" label="Marca" :items="brands" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.distribution" label="Distribucion" :items="distributions" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.distribution" label="Distribucion" :items="distributions" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                 </div>
                 <div class="form-column">
@@ -112,12 +112,12 @@ export default {
         countrys: [],
         turns: [],
         servicess: [],
-        brands: [],
+        distributions: [],
         tool: {
             country: null,
             turn: null,
             services: null,
-            brand: null,
+            distribution: null,
             model: null,
             serial: null,
             calibration_expiration: null,
@@ -166,7 +166,7 @@ export default {
                 country: null,
                 turn: null,
                 services: null,
-                brand: null,
+                distribution: null,
                 model: null,
                 serial: null,
                 calibrationExpiration: null,
@@ -204,7 +204,7 @@ export default {
         await axios.get('/api/countrys', getToken()).then(response => this.countrys =  response.data )
         await axios.get('/api/turns', getToken()).then(response => this.turns =  response.data )
         await axios.get('/api/servicess', getToken()).then(response => this.servicess = response.data)
-        await axios.get('/api/brands', getToken()).then(response => this.brands = response.data)
+        await axios.get('/api/distributions', getToken()).then(response => this.distributions = response.data)
         this.loading = false
     },
     components: {

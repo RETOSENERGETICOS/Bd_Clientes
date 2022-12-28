@@ -28,7 +28,7 @@
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-combobox label="Marca" v-model="tool.brand" item-text="name" :items="brands" item-value="name" disabled></v-combobox>
+                                <v-combobox label="Distribucion" v-model="tool.distribution" item-text="name" :items="distributions" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="Modelo" v-model="tool.model"></v-text-field>
@@ -127,7 +127,7 @@ export default {
         countrys: [],
         turns: [],
         servicess: [],
-        brands: [],
+        distributions: [],
     }),
     methods: {
         async update() {
@@ -142,7 +142,7 @@ export default {
                     measurement: this.tool.measurement,
                     turn: this.tool.turn,
                     services: this.tool.services,
-                    brand: this.tool.brand,
+                    distribution: this.tool.distribution,
                     model: this.tool.model,
                     serial_number: this.tool.serial_number,
                     calibration_expiration: this.tool.calibration_expiration,
@@ -181,7 +181,7 @@ export default {
         await axios.get('/api/countrys', getToken()).then(response => this.countrys =  response.data )
         await axios.get('/api/turns', getToken()).then(response => this.turns =  response.data )
         await axios.get('/api/servicess', getToken()).then(response => this.servicess = response.data)
-        await axios.get('/api/brands', getToken()).then(response => this.brands = response.data)
+        await axios.get('/api/distributions', getToken()).then(response => this.distributions = response.data)
         this.loading = false
     },
     components: {

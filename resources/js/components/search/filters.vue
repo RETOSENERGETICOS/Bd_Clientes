@@ -17,7 +17,7 @@
                 <v-row>
                     <v-col cols="4" v-if="filters.country.active"><v-select v-model="filter.country" label="Pais" :items="countrys" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.turn.active"><v-select v-model="filter.turn" label="Giro de la empresa" :items="turns" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.brand.active"><v-select v-model="filter.brand" label="Marca" :items="brands" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.distribution.active"><v-select v-model="filter.distribution" label="Distribucion" :items="distribution" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.services.active"><v-select v-model="filter.services" label="Servicios" :items="servicess" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.hasValidation.active">
                         <p>Sujeto a validacion</p>
@@ -68,14 +68,14 @@ export default {
         panel: 0,
         countrys: [{id: 0, name: 'TODOS'}],
         turns: [{id: 0, name: 'TODOS'}],
-        brands: [{id: 0, name: 'TODOS'}],
+        distributions: [{id: 0, name: 'TODOS'}],
         servicess: [{id: 0, name: 'TODOS'}],
         users: [{id: 0, email: 'TODOS'}],
         menu: false,
         filter: {
             country: null,
             turn: null,
-            brand: null,
+            distribution: null,
             services: null,
             hasValidation: false,
             mainLocalization: null,
@@ -147,10 +147,10 @@ export default {
                 this.turns = this.turns.concat(response.data)
                 this.filter.turn = this.turns[0]
             })
-        axios.get('/api/brands', getToken())
+        axios.get('/api/distributions', getToken())
             .then(response => {
-                this.brands = this.brands.concat(response.data)
-                this.filter.brand = this.brands[0]
+                this.distributions = this.distributions.concat(response.data)
+                this.filter.distribution = this.distributions[0]
             })
         axios.get('/api/servicess', getToken())
             .then(response => {

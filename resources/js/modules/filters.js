@@ -5,7 +5,7 @@ export default {
         filters: {
             country: { text: 'Pais', value: 'country.name' ,active: true, key: 'country' },
             turn: { text: 'Giro de la empresa', value: 'turn.name' ,active: true, key: 'turn' },
-            brand: { text: 'Marca', value: 'brand.name', active: true, key: 'brand' },
+            distribution: { text: 'Distribucion', value: 'distribution.name', active: true, key: 'distribution' },
             services: { text: 'Servicios', value: 'services.name', active: true, key: 'services' },
             hasValidation: { text: 'Sujeto a validacion', value: 'has_validation', active: false, key: 'has_validation' },
             mainLocalization: { text: 'Localizacion principal', value: 'main_localization', active: false, key: 'main_localization' },

@@ -35,7 +35,7 @@ class ToolController extends Controller
                     'measurement' => $tool->measurement,
                     'turn' => $tool->turn,
                     'services' => $tool->services,
-                    'brand' => $tool->brand,
+                    'distribution' => $tool->distribution,
                     'model' => $tool->model,
                     'serial_number' => $tool->serial_number,
                     'calibration_expiration' => $tool->calibration_expiration,
@@ -53,7 +53,7 @@ class ToolController extends Controller
             'measurement' => $tool->measurement,
             'turn' => $tool->turn,
             'services' => $tool->services,
-            'brand' => $tool->brand,
+            'distribution' => $tool->distribution,
             'model' => $tool->model,
             'serial_number' => $tool->serial_number,
             'calibration_expiration' => $tool->calibration_expiration,
@@ -121,7 +121,7 @@ class ToolController extends Controller
             $country = $this->getCountry($request->country);
             $turn = $this->getTurn($request->turn);
             $services = $this->getServices($request->services);
-            $brand = $this->getBrand($request->brand);
+            $distribution = $this->getDistribution($request->distribution);
             $oldTool = json_encode($this->getValues($tool->toArray(), $tool));
             if ($request->main_localization !== $tool->main_localization) {
                 $tool->update([ 'quantity' => $tool->quantity - $request->movingQuantity ]);
@@ -139,7 +139,7 @@ class ToolController extends Controller
                     'country_id' => $country->id ?? null,
                     'turn_id' => $turn->id ?? null,
                     'services_id' => $services->id ?? null,
-                    'brand_id' => $brand->id ?? null,
+                    'distribution_id' => $distribution->id ?? null,
                     'model' => $request->model,
                     'serial_number' => $request->serial,
                     'size' => $request->size,
@@ -179,12 +179,12 @@ class ToolController extends Controller
         $country = $this->getCountry($request->country);
         $turn = $this->getTurn($request->turn);
         $services = $this->getServices($request->services);
-        $brand = $this->getBrand($request->brand);
+        $distribution = $this->getDistribution($request->distribution);
         $tool = $request->user()->tools()->create([
             'country_id' => $country->id ?? null,
             'turn_id' => $turn->id ?? null,
             'services_id' => $services->id ?? null,
-            'brand_id' => $brand->id ?? null,
+            'distribution_id' => $distribution->id ?? null,
             'model' => $request->model,
             'serial_number' => $request->serial,
             'size' => $request->size,
@@ -207,8 +207,8 @@ class ToolController extends Controller
 
     private function getValues($values, Tool $tool) {
 //        dd($values, $tool);
-        $specialAttributes = ['country_id' => 'country','turn_id' => 'turn','services_id' => 'services','brand_id' => 'brand'];
-        $names = ['item' => 'Item','country' => 'Pais','turn_id' => 'Giro de la empresa','services_id' => 'Servicios','brand_id' => 'Marca',
+        $specialAttributes = ['country_id' => 'country','turn_id' => 'turn','services_id' => 'services','distribution_id' => 'distribution'];
+        $names = ['item' => 'Item','country' => 'Pais','turn_id' => 'Giro de la empresa','services_id' => 'Servicios','distribution_id' => 'Distribucion',
             'model' => 'Modelo','serial_number' => 'Numero de serie','calibration_expiration' => 'Expiracion de calibracion','dispatchable' => 'Despachable',
             'has_validation' => 'Sujeto a validacion', 'main_localization' => 'Localizacion principal', 'shelf_localization' => 'Localizacion de estante', 'shelf' => 'Estante',
             'measurement' => 'Medida', 'min_stock' => 'Stock minimo', 'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
@@ -231,7 +231,7 @@ class ToolController extends Controller
             'measurement' => $tool->measurement,
             'turn' => $tool->turn,
             'services' => $tool->services,
-            'brand' => $tool->brand,
+            'distribution' => $tool->distribution,
             'model' => $tool->model,
             'serial_number' => $tool->serial_number,
             'calibration_expiration' => $tool->calibration_expiration,
@@ -246,7 +246,7 @@ class ToolController extends Controller
     }
 
     public function search(Request $request) {
-        $especialKeys = ['country','turn','brand','services','user'];
+        $especialKeys = ['country','turn','distribution','services','user'];
         $filters = $request->keys();
         $query = Tool::query();
         foreach($filters as $filter) {
@@ -305,15 +305,15 @@ class ToolController extends Controller
         ]);
     }
 
-    private function getBrand($data)
+    private function getDistribution($data)
     {
         if (is_null($data)) {
             return null;
         }
         if (is_array($data)) {
-            return Brand::find($data['id']);
+            return Distribution::find($data['id']);
         }
-        return Brand::where('name', $data)->firstOrCreate([
+        return Distribution::where('name', $data)->firstOrCreate([
             'name' => $data
         ]);
     }

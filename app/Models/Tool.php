@@ -23,8 +23,8 @@ class Tool extends Model
         return $this->belongsTo(Country::class);
     }
 
-    public function brand(): BelongsTo {
-        return $this->belongsTo(Brand::class);
+    public function distribution(): BelongsTo {
+        return $this->belongsTo(Distribution::class);
     }
 
     public function Services(): BelongsTo {
