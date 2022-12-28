@@ -14,7 +14,6 @@ use App\Http\Controllers\Api\{
     ServicesController,
     DistributionController,
     TrainingController,
-    DistributionController,
     UploadController
 };
 
