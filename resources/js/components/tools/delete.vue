@@ -42,14 +42,14 @@ export default {
         headers: [
             {text: 'ITEM', value: 'item'},
             {text: 'Pais', value: 'country.name'},
-            {text: 'Dimension Principal', value: 'measurement'},
             {text: 'Giro de la empresa', value: 'turn.name'},
             {text: 'Servicios', value: 'services.name'},
             {text: 'Distribucion', value: 'distribution.name'},
             {text: 'Capacitacion', value: 'training.name'},
-            {text: '# Serie', value: 'serial_number'},
-            {text: 'Vencimiento de calibracion', value: 'calibration_expiration'},
-            {text: 'Sujeto a validacion', value: 'has_validation'},
+            {text: 'Nombre comercial', value: 'tradename'},
+            {text: 'Razon social', value: 'bname'},
+            {text: 'RFC/VAT/NIF', value: 'fvn'},
+            {text: 'Direccion completa', value: 'address'},
             {text: '', value: 'edit'}
         ]
     }),
