@@ -52,17 +52,19 @@ class ToolController extends Controller
             'services' => $tool->services,
             'distribution' => $tool->distribution,
             'training' => $tool->training,
-            'serial_number' => $tool->serial_number,
-            'calibration_expiration' => $tool->calibration_expiration,
-            'has_validation' => $tool->has_validation,
-            'main_localization' => $tool->main_localization,
-            'shelf_localization' => $tool->shelf_localization,
-            'shelf' => $tool->shelf,
+            'tradename' => $tool->tradename,
+            'bname' => $tool->bname,
+            'fvn' => $tool->fvn,
+            'address' => $tool->address,
+            'contact' => $tool->contact,
+            'phone' => $tool->phone,
+            'mail' => $tool->mail,
+            'payments' => $tool->payments,
+            'phonee' => $tool->phonee,
+            'maill' => $tool->maill,
+            'terms' => $tool->terms,
+            'credit' => $tool->credit,
             'user' => $tool->user,
-            'min_stock' => $tool->min_stock,
-            'quantity' => $tool->quantity,
-            'dispatchable' => $tool->dispatchable,
-            'comments' => $tool->comments,
             'files' => $tool->files->map(static function(File $file) {
                 return $file->path;
             })
@@ -139,18 +141,18 @@ class ToolController extends Controller
                     'services_id' => $services->id ?? null,
                     'distribution_id' => $distribution->id ?? null,
                     'training_id' => $training->id ?? null,
-                    'serial_number' => $request->serial,
-                    'size' => $request->size,
-                    'calibration_expiration' => $request->has_validation ? $request->calibration_expiration : null,
-                    'has_validation' => $request->has_validation,
-                    'main_localization' => $request->main_localization,
-                    'shelf_localization' => $request->shelf_localization,
-                    'shelf' => $request->shelf,
-                    'measurement' => $request->measurement,
-                    'min_stock' => $request->min_stock,
-                    'quantity' => $request->quantity,
-                    'comments' => $request->comments,
-                    'dispatchable' => $request->dispatchable
+                    'tradename' => $request->tradename,
+                    'bname' => $request->bname,
+                    'fvn' => $request->fvn,
+                    'address' => $request->address,
+                    'contact' => $request->contact,
+                    'phone' => $request->phone,
+                    'mail' => $request->mail,
+                    'payments' => $request->payments,
+                    'phonee' => $request->phonee,
+                    'maill' => $request->maill,
+                    'terms' => $request->terms,
+                    'credit' => $request->credit,
                 ]);
                 $oldValues = $tool->getChanges();
                 if (count($oldValues) > 0) {
@@ -185,21 +187,21 @@ class ToolController extends Controller
             'services_id' => $services->id ?? null,
             'distribution_id' => $distribution->id ?? null,
             'training_id' => $training->id ?? null,
-            'serial_number' => $request->serial,
-            'size' => $request->size,
-            'calibration_expiration' => $request->has_validation ? $request->calibration_expiration : null,
-            'has_validation' => $request->has_validation,
-            'main_localization' => $request->main_localization,
-            'shelf_localization' => $request->shelf_localization,
-            'shelf' => $request->shelf,
-            'measurement' => $request->measurement,
-            'min_stock' => $request->min_stock,
-            'quantity' => $request->quantity,
-            'comments' => $request->comments,
-            'dispatchable' => $request->dispatchable
+            'tradename' => $request->tradename,
+            'bname' => $request->bname,
+            'fvn' => $request->fvn,
+            'address' => $request->address,
+            'contact' => $request->contact,
+            'phone' => $request->phone,
+            'mail' => $request->mail,
+            'payments' => $request->payments,
+            'phonee' => $request->phonee,
+            'maill' => $request->maill,
+            'terms' => $request->terms,
+            'credit' => $request->credit
         ]);
         $tool->update([
-            'item' => sprintf('AAA%04d', $tool->id)
+            'item' => sprintf('CLT%04d', $tool->id)
         ]);
         return $tool->refresh();
     }
@@ -208,9 +210,9 @@ class ToolController extends Controller
 //        dd($values, $tool);
         $specialAttributes = ['country_id' => 'country','turn_id' => 'turn','services_id' => 'services','distribution_id' => 'distribution','training_id' => 'training'];
         $names = ['item' => 'Item','country' => 'Pais','turn_id' => 'Giro de la empresa','services_id' => 'Servicios','distribution_id' => 'Distribucion',
-            'training' => 'Capacitacion','serial_number' => 'Numero de serie','calibration_expiration' => 'Expiracion de calibracion','dispatchable' => 'Despachable',
-            'has_validation' => 'Sujeto a validacion', 'main_localization' => 'Localizacion principal', 'shelf_localization' => 'Localizacion de estante', 'shelf' => 'Estante',
-            'measurement' => 'Medida', 'min_stock' => 'Stock minimo', 'quantity' => 'Cantidad', 'comments' => 'Comentarios'];
+            'training' => 'Capacitacion','tradename' => 'Nombre comercial','bname' => 'Razon social','fvn' => 'RFC/VAT/NIF',
+            'address' => 'Direccion Completa', 'contact' => 'Contacto compras', 'phone' => 'Telefono', 'mail' => 'Correo',
+            'payments' => 'Contacto pagos', 'phonee' => 'Telefono', 'maill' => 'Correo', 'terms' => 'Condiciones de venta', 'credit' => 'Credito'];
         $data = array();
         foreach (array_keys($values) as $key) {
             if (array_key_exists($key, $specialAttributes)) {
@@ -227,20 +229,23 @@ class ToolController extends Controller
             'id' => $tool->id,
             'item' => $tool->item,
             'country' => $tool->country,
-            'measurement' => $tool->measurement,
             'turn' => $tool->turn,
             'services' => $tool->services,
             'distribution' => $tool->distribution,
             'training' => $tool->training,
-            'serial_number' => $tool->serial_number,
-            'calibration_expiration' => $tool->calibration_expiration,
-            'has_validation' => $tool->has_validation,
-            'main_localization' => $tool->main_localization,
-            'shelf_localization' => $tool->shelf_localization,
-            'shelf' => $tool->shelf,
+            'tradename' => $tool->tradename,
+            'bname' => $tool->bname,
+            'fvn' => $tool->fvn,
+            'address' => $tool->address,
+            'contact' => $tool->contact,
+            'phone' => $tool->phone,
+            'mail' => $tool->mail,
+            'payments' => $tool->payments,
+            'phonee' => $tool->phonee,
+            'maill' => $tool->maill,
+            'terms' => $tool->terms,
+            'credit' => $tool->credit,
             'user' => $tool->user,
-            'min_stock' => $tool->min_stock,
-            'quantity' => $tool->quantity
         ];
     }
 
