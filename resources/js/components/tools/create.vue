@@ -20,7 +20,7 @@
                     </div>
                     <div class="form-row">
                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.turn" label="Giro de la empresa" :items="turns" item-text="name" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.turn" label="Sub Grupo" :items="turns" item-text="name" clearable item-value="name"></v-select>
+                        <v-select v-else v-model.trim="tool.turn" label="Giro de la empresa" :items="turns" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Servicios" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
@@ -37,55 +37,42 @@
                 </div>
                 <div class="form-column">
                     <div class="form-row">
-                        <v-text-field v-model="tool.serial" label="N de Serie"></v-text-field>
+                        <v-text-field v-model="tool.tradename" label="Nombre comercial" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <p>Sujeto a validacion</p>
-                        <v-radio-group v-model="tool.has_validation" mandatory>
-                            <v-radio label="Si" :value="true"></v-radio>
-                            <v-radio label="No" :value="false"></v-radio>
-                        </v-radio-group>
+                        <v-text-field v-model="tool.bname" label="Razon social" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-menu ref="datePickerMenu" v-model="menu" :close-on-content-click="false" offset-y min-width="auto">
-                            <template v-slot:activator="{on, attrs}">
-                                <v-text-field v-model="tool.calibration_expiration" label="Vencimiento de calibracion" v-on="on" v-bind="attrs" :disabled="!tool.has_validation"></v-text-field>
-                            </template>
-                            <v-date-picker v-model="tool.calibration_expiration" label="Vencimiento de calibracion" no-title></v-date-picker>
-                        </v-menu>
+                        <v-text-field v-model="tool.fvn" label="RFC/VAT/NIF" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.main_localization" label="Localizacion principal" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.address" label="Direccion completa" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.shelf_localization" label="Localizacion de estante"></v-text-field>
+                        <v-text-field v-model="tool.contact" label="Contacto compras"></v-text-field>
+                    </div>
+                   <div class="form-row">
+                        <v-text-field v-model="tool.phone" label="Telefono" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.shelf" label="# Estante"></v-text-field>
+                        <v-text-field v-model="tool.mail" label="Correo" :rules="[rules.required]"></v-text-field>
                     </div>
                 </div>
                 <div class="form-column">
                     <div class="form-row">
-                        <p>Despachable</p>
-                        <v-radio-group mandatory>
-                            <v-radio label="Si" :value="true"></v-radio>
-                            <v-radio label="No" :value="false"></v-radio>
-                        </v-radio-group>
+                        <v-text-field v-model="tool.payments" label="Contacto pagos" :rules="[rules.required]"></v-text-field>
                     </div>
-                    <div class="form-row">
-                        <v-text-field v-model.number="tool.quantity" label="Cantidad" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
+                     <div class="form-row">
+                        <v-text-field v-model="tool.phonee" label="Telefono" :rules="[rules.required]"></v-text-field>
                     </div>
-                    <div class="form-row">
-                        <v-text-field v-model="tool.measurement" label="Unidad de medida" :rules="[rules.required]"></v-text-field>
+                     <div class="form-row">
+                        <v-text-field v-model="tool.maill" label="Correo" :rules="[rules.required]"></v-text-field>
                     </div>
-                    <div class="form-row">
-                        <v-text-field v-model="tool.min_stock" label="Inventario minimo"></v-text-field>
+                     <div class="form-row">
+                        <v-text-field v-model="tool.terms" label="Condiciones de venta" :rules="[rules.required]"></v-text-field>
                     </div>
-                    <div class="form-row">
-                        <v-textarea v-model="tool.comments" label="Comentarios"></v-textarea>
-                    </div>
-                    <div class="form-row">
-                        <file-pond name="documents" ref="documents" label-idle="Archivos" accepted-file-types="application/pdf" @processfile="onProcessFile" :allow-multiple="true"></file-pond>
+                     <div class="form-row">
+                        <v-text-field v-model="tool.credit" label="Credito" :rules="[rules.required]"></v-text-field>
                     </div>
                 </div>
             </div>
@@ -121,17 +108,18 @@ export default {
             services: null,
             distribution: null,
             training: null,
-            serial: null,
-            calibration_expiration: null,
-            has_validation: false,
-            main_localization: null,
-            shelf_localization: null,
-            shelf: null,
-            measurement: null,
-            min_stock: null,
-            quantity: null,
-            documents: [],
-            comments: null
+             tradename: null,
+            bname: null,
+            fvn: null,
+            address: null,
+            contact: null,
+            phone: null,
+            mail: null,
+            payments: null,
+            phonee: null,
+            maill: null,
+            terms: null,
+            credit: null
         }
     }),
     methods: {
@@ -170,17 +158,18 @@ export default {
                 services: null,
                 distribution: null,
                 training: null,
-                serial: null,
-                calibrationExpiration: null,
-                hasValidation: false,
-                mainLocalization: null,
-                shelfLocalization: null,
-                shelf: null,
-                measurement: null,
-                minStock: null,
-                quantity: null,
-                documents: [],
-                comments: null
+                tradename: null,
+                bname: null,
+                fvn: null,
+                address: null,
+                contact: null,
+                phone: null,
+                mail: null,
+                payments: null,
+                phonee: null,
+                maill: null,
+                terms: null,
+                credit: null
             }
             this.$refs.documents.removeFiles()
         }

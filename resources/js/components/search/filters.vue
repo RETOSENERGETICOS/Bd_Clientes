@@ -21,17 +21,21 @@
                     <v-col cols="4" v-if="filters.services.active"><v-select v-model="filter.services" label="Servicios" :items="servicess" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.training.active"><v-select v-model="filter.training" label="Capacitacion" :items="trainings" item-text="name" return-object clearable></v-select></v-col>
                     
-                    <v-col cols="4" v-if="filters.mainLocalization.active"><v-text-field v-model="filter.mainLocalization" label="Localizacion principal" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.shelfLocalization.active"><v-text-field v-model="filter.shelfLocalization" label="Localizacion de estante" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.shelf.active"><v-text-field v-model="filter.shelf" label="Estante" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.measurement.active"><v-text-field v-model="filter.measurement" label="Medida" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.tradename.active"><v-text-field v-model="filter.tradename" label="Nombre comercial" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.bname.active"><v-text-field v-model="filter.bname" label="Nombre comercial" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.fvn.active"><v-text-field v-model="filter.fvn" label="Nombre comercial" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.address.active"><v-text-field v-model="filter.address" label="Nombre comercial" clearable></v-text-field></v-col>
                    
-                    <v-col cols="4" v-if="filters.minStock.active"><v-text-field v-model="filter.minStock" label="Inventario minimo" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.quantity.active"><v-text-field v-model.number="filter.quantity" label="Cantidad" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.serialNumber.active"><v-text-field v-model="filter.serialNumber" label="Serie" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.contact.active"><v-text-field v-model="filter.contact" label="Nombre comercial" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.phone.active"><v-text-field v-model="filter.phone" label="Nombre comercial" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.mail.active"><v-text-field v-model="filter.mail" label="Nombre comercial" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.payments.active"><v-text-field v-model="filter.payments" label="Nombre comercial" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.phonee.active"><v-text-field v-model="filter.phonee" label="Nombre comercial" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.maill.active"><v-text-field v-model="filter.maill" label="Nombre comercial" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.terms.active"><v-text-field v-model="filter.terms" label="Nombre comercial" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.credit.active"><v-text-field v-model="filter.credit" label="Nombre comercial" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.item.active"><v-text-field v-model="filter.item" label="Item" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.user.active"><v-select v-model="filter.user" label="Usuario/User" :items="users" item-text="email" return-object clearable></v-select></v-col>
-                    
+                    <v-col cols="4" v-if="filters.user.active"><v-select v-model="filter.user" label="Usuario/User" :items="users" item-text="email" return-object clearable></v-select></v-col>   
                 </v-row>
             </v-expansion-panel-content>
         </v-expansion-panel>
@@ -60,19 +64,20 @@ export default {
             distribution: null,
             services: null,
             training: null,
-            hasValidation: false,
-            mainLocalization: null,
-            shelfLocalization: null,
-            shelf: null,
-            measurement: null,
-            dispatchable: false,
-            minStock: 0,
-            quantity: 0,
-            model: null,
-            serialNumber: null,
+            tradename: null,
+            bname: null,
+            fvn: null,
+            address: null,
+            contact: null,
+            phone: null,
+            mail: null,
+            payments: null,
+            phonee: null,
+            maill: null,
+            terms:null,
+            credit: null,
             item: null,
             user: null,
-            calibrationExpiration: null,
         },
         historyHeaders: [
             {text: 'Item', value: 'tool.item'},
