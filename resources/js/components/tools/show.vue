@@ -39,41 +39,38 @@
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-text-field label="Razon social" v-model="tool.bname" :rules="[rules.required]"></v-text-field>
-                            </v-col>
-                            <v-col cols="4">
                                 <v-text-field label="RFC/VAT/NIF" v-model="tool.fvn" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="Direccion completa" v-model="tool.address" :rules="[rules.required]"></v-text-field>
                             </v-col>
-                        </v-row>
-                        <v-row>
                             <v-col cols="4">
                                 <v-text-field label="Contacto compras" v-model="tool.contact"></v-text-field>
                             </v-col>
+                        </v-row>
+                        <v-row>
                             <v-col cols="4">
                                 <v-text-field label="Telefono" v-model="tool.phone" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="Correo" v-model="tool.mail" :rules="[rules.required]"></v-text-field>
                             </v-col>
+                            <v-col cols="4">
+                                <v-text-field label="Contacto pagos" v-model="tool.payments" :rules="[rules.required]"></v-text-field>
+                            </v-col>
                         </v-row>
                         <v-row>
                            <v-col cols="4">
-                                <v-text-field label="Contacto pagos" v-model="tool.payments" :rules="[rules.required]"></v-text-field>
-                            </v-col>
-                            <v-col cols="4">
                                 <v-text-field label="Telefono" v-model="tool.phonee" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="Correo" v-model="tool.maill" :rules="[rules.required]"></v-text-field>
                             </v-col>
-                        </v-row>
-                        <v-row>
                             <v-col cols="4">
                                 <v-text-field label="Condiciones de venta" v-model="tool.terms" :rules="[rules.required]"></v-text-field>
                             </v-col>
+                        </v-row>
+                        <v-row>
                             <v-col cols="4">
                                 <v-text-field label="Credito" v-model="tool.credit" :rules="[rules.required]"></v-text-field>
                             </v-col>
