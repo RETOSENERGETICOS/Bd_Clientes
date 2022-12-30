@@ -3,7 +3,7 @@ export default {
     state: {
         items: [],
         filters: {
-            country: { text: 'Pais', value: 'country.name' ,active: true, key: 'country' },
+            country: { text: 'Pais/Country', value: 'country.name' ,active: true, key: 'country' },
             turn: { text: 'Actividad', value: 'turn.name' ,active: true, key: 'turn' },
             distribution: { text: 'Distribucion', value: 'distribution.name', active: true, key: 'distribution' },
             services: { text: 'Servicios', value: 'services.name', active: true, key: 'services' },

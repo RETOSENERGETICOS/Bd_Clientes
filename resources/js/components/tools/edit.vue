@@ -30,7 +30,7 @@ export default {
         search: null,
         headers: [
             { text: 'ITEM', value: 'item' },
-            { text: 'Pais', value: 'country.name' },
+            { text: 'Pais/Country', value: 'country.name' },
             { text: 'Actividad', value: 'turn.name' },
             { text: 'Servicios', value: 'services.name' },
             { text: 'Distribucion', value: 'distribution.name' },

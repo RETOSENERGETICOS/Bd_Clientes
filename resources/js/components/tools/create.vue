@@ -15,8 +15,8 @@
             <div class="form-container">
                 <div class="form-column">
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.country" label="Pais" :items="countrys" item-text="name" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.country" label="Pais" :items="countrys" item-text="name" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.country" label="Pais/Country" :items="countrys" item-text="name" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.country" label="Pais/Country" :items="countrys" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.turn" label="Actividad" :items="turns" item-text="name" clearable item-value="name"></v-combobox>

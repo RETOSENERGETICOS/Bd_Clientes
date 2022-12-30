@@ -17,7 +17,7 @@
                     <v-form v-model="valid">
                         <v-row>
                             <v-col cols="4">
-                                <v-combobox label="Pais" v-model="tool.country" item-text="name" :items="countrys" clearable item-value="name"></v-combobox>
+                                <v-combobox label="Pais/Country" v-model="tool.country" item-text="name" :items="countrys" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
                                 <v-combobox label="Actividad" v-model="tool.turn" item-text="name" :items="turns" clearable item-value="name"></v-combobox>
