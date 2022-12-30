@@ -15,18 +15,18 @@
                     </v-col>
                 </v-row>
                 <v-row>
-                    <v-col cols="4" v-if="filters.country.active"><v-select v-model="filter.country" label="Pais" :items="countrys" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.turn.active"><v-select v-model="filter.turn" label="Giro de la empresa" :items="turns" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.distribution.active"><v-select v-model="filter.distribution" label="Distribucion" :items="distribution" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.services.active"><v-select v-model="filter.services" label="Servicios" :items="servicess" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.country.active"><v-select v-model="filter.country" label="Pais/Country" :items="countrys" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.turn.active"><v-select v-model="filter.turn" label="Actividad/Activity" :items="turns" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.services.active"><v-select v-model="filter.services" label="Servicios/Services" :items="servicess" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.distribution.active"><v-select v-model="filter.distribution" label="Distribucion/Distribution" :items="distribution" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.training.active"><v-select v-model="filter.training" label="Capacitacion" :items="trainings" item-text="name" return-object clearable></v-select></v-col>
                     
                     <v-col cols="4" v-if="filters.tradename.active"><v-text-field v-model="filter.tradename" label="Nombre comercial/Company Name" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.bname.active"><v-text-field v-model="filter.bname" label="Razon social" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.fvn.active"><v-text-field v-model="filter.fvn" label="RFC/VAT/NIF" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.address.active"><v-text-field v-model="filter.address" label="Direccion/Address" clearable></v-text-field></v-col>
-                   
                     <v-col cols="4" v-if="filters.contact.active"><v-text-field v-model="filter.contact" label="Contacto de compras/Purchasing Contact" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.contact.active"><v-text-field v-model="filter.contact" label="Contacto de compras/Purchasing Contact" clearable></v-text-field></v-col>
+                    
                     <v-col cols="4" v-if="filters.phone.active"><v-text-field v-model="filter.phone" label="Telefono/Phone number" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.mail.active"><v-text-field v-model="filter.mail" label="Correo/Email" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.payments.active"><v-text-field v-model="filter.payments" label="Contacto de pagos/Payment Contact" clearable></v-text-field></v-col>
