@@ -16,7 +16,7 @@
                 </v-row>
                 <v-row>
                     <v-col cols="4" v-if="filters.country.active"><v-select v-model="filter.country" label="Pais" :items="countrys" item-text="name" return-object clearable></v-select></v-col>
-                    <v-col cols="4" v-if="filters.turn.active"><v-select v-model="filter.turn" label="Giro de la empresa" :items="turns" item-text="name" return-object clearable></v-select></v-col>
+                    <v-col cols="4" v-if="filters.turn.active"><v-select v-model="filter.turn" label="Actividad" :items="turns" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.distribution.active"><v-select v-model="filter.distribution" label="Distribucion" :items="distribution" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.services.active"><v-select v-model="filter.services" label="Servicios" :items="servicess" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.training.active"><v-select v-model="filter.training" label="Capacitacion" :items="trainings" item-text="name" return-object clearable></v-select></v-col>

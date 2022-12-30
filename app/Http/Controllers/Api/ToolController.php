@@ -209,7 +209,7 @@ class ToolController extends Controller
     private function getValues($values, Tool $tool) {
 //        dd($values, $tool);
         $specialAttributes = ['country_id' => 'country','turn_id' => 'turn','services_id' => 'services','distribution_id' => 'distribution','training_id' => 'training'];
-        $names = ['item' => 'Item','country' => 'Pais','turn_id' => 'Giro de la empresa','services_id' => 'Servicios','distribution_id' => 'Distribucion',
+        $names = ['item' => 'Item','country' => 'Pais','turn_id' => 'Actividad','services_id' => 'Servicios','distribution_id' => 'Distribucion',
             'training' => 'Capacitacion','tradename' => 'Nombre comercial','bname' => 'Razon social','fvn' => 'RFC/VAT/NIF',
             'address' => 'Direccion Completa', 'contact' => 'Contacto compras', 'phone' => 'Telefono', 'mail' => 'Correo',
             'payments' => 'Contacto pagos', 'phonee' => 'Telefono', 'maill' => 'Correo', 'terms' => 'Condiciones de venta', 'credit' => 'Credito'];

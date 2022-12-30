@@ -20,7 +20,7 @@
                                 <v-combobox label="Pais" v-model="tool.country" item-text="name" :items="countrys" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-combobox label="Giro de la empresa" v-model="tool.turn" item-text="name" :items="turns" clearable item-value="name"></v-combobox>
+                                <v-combobox label="Actividad" v-model="tool.turn" item-text="name" :items="turns" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
                                 <v-combobox label="Servicios" v-model="tool.services" item-text="name" :items="servicess" :rules="[rules.required]" clearable item-value="name" disabled></v-combobox>

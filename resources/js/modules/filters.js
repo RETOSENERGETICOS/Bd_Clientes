@@ -4,7 +4,7 @@ export default {
         items: [],
         filters: {
             country: { text: 'Pais', value: 'country.name' ,active: true, key: 'country' },
-            turn: { text: 'Giro de la empresa', value: 'turn.name' ,active: true, key: 'turn' },
+            turn: { text: 'Actividad', value: 'turn.name' ,active: true, key: 'turn' },
             distribution: { text: 'Distribucion', value: 'distribution.name', active: true, key: 'distribution' },
             services: { text: 'Servicios', value: 'services.name', active: true, key: 'services' },
             training: { text: 'Capacitacion', value: 'training.name', active: true, key: 'training' },

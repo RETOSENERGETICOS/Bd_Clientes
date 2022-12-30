@@ -31,7 +31,7 @@ export default {
         headers: [
             { text: 'ITEM', value: 'item' },
             { text: 'Pais', value: 'country.name' },
-            { text: 'Giro de la empresa', value: 'turn.name' },
+            { text: 'Actividad', value: 'turn.name' },
             { text: 'Servicios', value: 'services.name' },
             { text: 'Distribucion', value: 'distribution.name' },
             { text: 'Capacitacion', value: 'training.name' },
