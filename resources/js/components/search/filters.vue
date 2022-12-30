@@ -21,19 +21,19 @@
                     <v-col cols="4" v-if="filters.services.active"><v-select v-model="filter.services" label="Servicios" :items="servicess" item-text="name" return-object clearable></v-select></v-col>
                     <v-col cols="4" v-if="filters.training.active"><v-select v-model="filter.training" label="Capacitacion" :items="trainings" item-text="name" return-object clearable></v-select></v-col>
                     
-                    <v-col cols="4" v-if="filters.tradename.active"><v-text-field v-model="filter.tradename" label="Nombre comercial" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.bname.active"><v-text-field v-model="filter.bname" label="Nombre comercial" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.fvn.active"><v-text-field v-model="filter.fvn" label="Nombre comercial" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.address.active"><v-text-field v-model="filter.address" label="Nombre comercial" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.tradename.active"><v-text-field v-model="filter.tradename" label="Nombre comercial/Company Name" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.bname.active"><v-text-field v-model="filter.bname" label="Razon social" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.fvn.active"><v-text-field v-model="filter.fvn" label="RFC/VAT/NIF" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.address.active"><v-text-field v-model="filter.address" label="Direccion/Address" clearable></v-text-field></v-col>
                    
-                    <v-col cols="4" v-if="filters.contact.active"><v-text-field v-model="filter.contact" label="Nombre comercial" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.phone.active"><v-text-field v-model="filter.phone" label="Nombre comercial" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.mail.active"><v-text-field v-model="filter.mail" label="Nombre comercial" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.payments.active"><v-text-field v-model="filter.payments" label="Nombre comercial" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.phonee.active"><v-text-field v-model="filter.phonee" label="Nombre comercial" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.maill.active"><v-text-field v-model="filter.maill" label="Nombre comercial" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.terms.active"><v-text-field v-model="filter.terms" label="Nombre comercial" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.credit.active"><v-text-field v-model="filter.credit" label="Nombre comercial" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.contact.active"><v-text-field v-model="filter.contact" label="Contacto de compras/Purchasing Contact" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.phone.active"><v-text-field v-model="filter.phone" label="Telefono" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.mail.active"><v-text-field v-model="filter.mail" label="Correo" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.payments.active"><v-text-field v-model="filter.payments" label="Contacto pagos" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.phonee.active"><v-text-field v-model="filter.phonee" label="Telefono" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.maill.active"><v-text-field v-model="filter.maill" label="Correo" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.terms.active"><v-text-field v-model="filter.terms" label="Condiciones de venta" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.credit.active"><v-text-field v-model="filter.credit" label="Credito" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.item.active"><v-text-field v-model="filter.item" label="Item" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.user.active"><v-select v-model="filter.user" label="Usuario/User" :items="users" item-text="email" return-object clearable></v-select></v-col>   
                 </v-row>

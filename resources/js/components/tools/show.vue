@@ -34,7 +34,7 @@
                                 <v-combobox label="Capacitacion" v-model="tool.training" item-text="name" :items="trainings" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Nombre comercial" v-model="tool.tradename" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Nombre comercial/Company Name" v-model="tool.tradename" :rules="[rules.required]"></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>
@@ -42,10 +42,10 @@
                                 <v-text-field label="RFC/VAT/NIF" v-model="tool.fvn" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Direccion completa" v-model="tool.address" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Direccion/Address" v-model="tool.address" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Contacto compras" v-model="tool.contact"></v-text-field>
+                                <v-text-field label="Contacto de compras/Purchasing Contact" v-model="tool.contact"></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>

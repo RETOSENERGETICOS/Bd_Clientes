@@ -35,9 +35,9 @@ export default {
             { text: 'Servicios/Service', value: 'services.name' },
             { text: 'Distribucion/Distribution', value: 'distribution.name' },
             { text: 'Capacitacion/Training', value: 'training.name' },
-            { text: 'Nombre comercial', value: 'tradename' },
+            { text: 'Nombre comercial/Company Name', value: 'tradename' },
             { text: 'RFC/VAT/NIF', value: 'fvn' },
-            { text: 'Direccion completa', value: 'address' },
+            { text: 'Direccion/Address', value: 'address' },
             { text: '', value: 'edit' }
         ]
     }),

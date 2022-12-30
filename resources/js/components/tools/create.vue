@@ -37,16 +37,16 @@
                 </div>
                 <div class="form-column">
                     <div class="form-row">
-                        <v-text-field v-model="tool.tradename" label="Nombre comercial" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.tradename" label="Nombre comercial/Company Name" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
                         <v-text-field v-model="tool.fvn" label="RFC/VAT/NIF" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.address" label="Direccion completa" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.address" label="Direccion/Address" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.contact" label="Contacto compras"></v-text-field>
+                        <v-text-field v-model="tool.contact" label="Contacto de compras/Purchasing Contact"></v-text-field>
                     </div>
                    <div class="form-row">
                         <v-text-field v-model="tool.phone" label="Telefono" :rules="[rules.required]"></v-text-field>
