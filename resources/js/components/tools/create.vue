@@ -40,9 +40,6 @@
                         <v-text-field v-model="tool.tradename" label="Nombre comercial" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.bname" label="Razon social" :rules="[rules.required]"></v-text-field>
-                    </div>
-                    <div class="form-row">
                         <v-text-field v-model="tool.fvn" label="RFC/VAT/NIF" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">

@@ -36,7 +36,6 @@ export default {
             { text: 'Distribucion/Distribution', value: 'distribution.name' },
             { text: 'Capacitacion/Training', value: 'training.name' },
             { text: 'Nombre comercial', value: 'tradename' },
-            { text: 'Razon social', value: 'bname' },
             { text: 'RFC/VAT/NIF', value: 'fvn' },
             { text: 'Direccion completa', value: 'address' },
             { text: '', value: 'edit' }

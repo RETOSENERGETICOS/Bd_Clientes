@@ -210,7 +210,7 @@ class ToolController extends Controller
 //        dd($values, $tool);
         $specialAttributes = ['country_id' => 'country','turn_id' => 'turn','services_id' => 'services','distribution_id' => 'distribution','training_id' => 'training'];
         $names = ['item' => 'Item','country' => 'Pais/Country','turn_id' => 'Actividad/Activity','services_id' => 'Servicios/Service','distribution_id' => 'Distribucion/Distribution',
-            'training' => 'Capacitacion/Training','tradename' => 'Nombre comercial','bname' => 'Razon social','fvn' => 'RFC/VAT/NIF',
+            'training' => 'Capacitacion/Training','tradename' => 'Nombre comercial','fvn' => 'RFC/VAT/NIF',
             'address' => 'Direccion Completa', 'contact' => 'Contacto compras', 'phone' => 'Telefono', 'mail' => 'Correo',
             'payments' => 'Contacto pagos', 'phonee' => 'Telefono', 'maill' => 'Correo', 'terms' => 'Condiciones de venta', 'credit' => 'Credito'];
         $data = array();

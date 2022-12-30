@@ -39,9 +39,6 @@
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-text-field label="Razon social" v-model="tool.bname" :rules="[rules.required]"></v-text-field>
-                            </v-col>
-                            <v-col cols="4">
                                 <v-text-field label="RFC/VAT/NIF" v-model="tool.fvn" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
