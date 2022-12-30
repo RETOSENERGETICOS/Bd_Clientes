@@ -66,10 +66,10 @@
                         <v-text-field v-model="tool.maill" label="Correo/Email" :rules="[rules.required]"></v-text-field>
                     </div>
                      <div class="form-row">
-                        <v-text-field v-model="tool.terms" label="Condiciones de venta" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.terms" label="Condiciones de venta/Sales Arrangement" :rules="[rules.required]"></v-text-field>
                     </div>
                      <div class="form-row">
-                        <v-text-field v-model="tool.credit" label="Credito" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.credit" label="Credito/Credit" :rules="[rules.required]"></v-text-field>
                     </div>
                 </div>
             </div>

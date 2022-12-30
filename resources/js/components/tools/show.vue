@@ -67,12 +67,12 @@
                                 <v-text-field label="Correo/Email" v-model="tool.maill" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Condiciones de venta" v-model="tool.terms" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Condiciones de venta/Sales Arrangement" v-model="tool.terms" :rules="[rules.required]"></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-text-field label="Credito" v-model="tool.credit" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Credito/Credit" v-model="tool.credit" :rules="[rules.required]"></v-text-field>
                             </v-col>
                         </v-row>
                     </v-form>

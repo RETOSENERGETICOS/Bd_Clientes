@@ -32,8 +32,8 @@
                     <v-col cols="4" v-if="filters.payments.active"><v-text-field v-model="filter.payments" label="Contacto de pagos/Payment Contact" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.phonee.active"><v-text-field v-model="filter.phonee" label="Telefono/Phone number" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.maill.active"><v-text-field v-model="filter.maill" label="Correo/Email" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.terms.active"><v-text-field v-model="filter.terms" label="Condiciones de venta" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.credit.active"><v-text-field v-model="filter.credit" label="Credito" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.terms.active"><v-text-field v-model="filter.terms" label="Condiciones de venta/Sales Arrangement" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.credit.active"><v-text-field v-model="filter.credit" label="Credito/Credit" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.item.active"><v-text-field v-model="filter.item" label="Item" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.user.active"><v-select v-model="filter.user" label="Usuario/User" :items="users" item-text="email" return-object clearable></v-select></v-col>   
                 </v-row>
