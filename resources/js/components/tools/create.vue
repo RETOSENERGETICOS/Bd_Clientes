@@ -51,11 +51,11 @@
                    <div class="form-row">
                         <v-text-field v-model="tool.phone" label="Telefono/Phone number" :rules="[rules.required]"></v-text-field>
                     </div>
+                </div>
+                <div class="form-column">
                     <div class="form-row">
                         <v-text-field v-model="tool.mail" label="Correo/Email" :rules="[rules.required]"></v-text-field>
                     </div>
-                </div>
-                <div class="form-column">
                     <div class="form-row">
                         <v-text-field v-model="tool.payments" label="Contacto de pagos/Payment Contact" :rules="[rules.required]"></v-text-field>
                     </div>
