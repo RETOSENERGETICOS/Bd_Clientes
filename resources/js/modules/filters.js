@@ -3,12 +3,13 @@ export default {
     state: {
         items: [],
         filters: {
-            country: { text: 'Pais/Country', value: 'country.name' ,active: true, key: 'country' },
-            turn: { text: 'Actividad/Activity', value: 'turn.name' ,active: true, key: 'turn' },
-            distribution: { text: 'Distribucion/Distribution', value: 'distribution.name', active: true, key: 'distribution' },
-            services: { text: 'Servicios/Service', value: 'services.name', active: true, key: 'services' },
-            training: { text: 'Capacitacion/Training', value: 'training.name', active: true, key: 'training' },
+            country: { text: 'Pais', value: 'country.name' ,active: true, key: 'country' },
+            turn: { text: 'Giro de la empresa', value: 'turn.name' ,active: true, key: 'turn' },
+            distribution: { text: 'Distribucion', value: 'distribution.name', active: true, key: 'distribution' },
+            services: { text: 'Servicios', value: 'services.name', active: true, key: 'services' },
+            training: { text: 'Capacitacion', value: 'training.name', active: true, key: 'training' },
             tradename: { text: 'Nombre comercial', value: 'tradename', active: false, key: 'tradename' },
+            bname: { text: 'Razon social', value: 'bname', active: false, key: 'bname' },
             fvn: { text: 'RFC/VAT/NIF', value: 'fvn', active: false, key: 'fvn' },
             address: { text: 'Direccion completa', value: 'address', active: false, key: 'address' },
             contact: { text: 'Contacto compras', value: 'contact', active: false, key: 'contact' },

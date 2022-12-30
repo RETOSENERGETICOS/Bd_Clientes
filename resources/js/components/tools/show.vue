@@ -17,27 +17,30 @@
                     <v-form v-model="valid">
                         <v-row>
                             <v-col cols="4">
-                                <v-combobox label="Pais/Country" v-model="tool.country" item-text="name" :items="countrys" clearable item-value="name"></v-combobox>
+                                <v-combobox label="Pais" v-model="tool.country" item-text="name" :items="countrys" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-combobox label="Actividad/Activity" v-model="tool.turn" item-text="name" :items="turns" clearable item-value="name"></v-combobox>
+                                <v-combobox label="Giro de la empresa" v-model="tool.turn" item-text="name" :items="turns" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-combobox label="Servicios/Service" v-model="tool.services" item-text="name" :items="servicess" :rules="[rules.required]" clearable item-value="name" disabled></v-combobox>
+                                <v-combobox label="Servicios" v-model="tool.services" item-text="name" :items="servicess" :rules="[rules.required]" clearable item-value="name" disabled></v-combobox>
                             </v-col>
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-combobox label="Distribucion/Distribution" v-model="tool.distribution" item-text="name" :items="distributions" item-value="name" disabled></v-combobox>
+                                <v-combobox label="Distribucion" v-model="tool.distribution" item-text="name" :items="distributions" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-combobox label="Capacitacion/Training" v-model="tool.training" item-text="name" :items="trainings" item-value="name" disabled></v-combobox>
+                                <v-combobox label="Capacitacion" v-model="tool.training" item-text="name" :items="trainings" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="Nombre comercial" v-model="tool.tradename" :rules="[rules.required]"></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>
+                            <v-col cols="4">
+                                <v-text-field label="Razon social" v-model="tool.bname" :rules="[rules.required]"></v-text-field>
+                            </v-col>
                             <v-col cols="4">
                                 <v-text-field label="RFC/VAT/NIF" v-model="tool.fvn" :rules="[rules.required]"></v-text-field>
                             </v-col>
