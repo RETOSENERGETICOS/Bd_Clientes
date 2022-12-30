@@ -211,8 +211,8 @@ class ToolController extends Controller
         $specialAttributes = ['country_id' => 'country','turn_id' => 'turn','services_id' => 'services','distribution_id' => 'distribution','training_id' => 'training'];
         $names = ['item' => 'Item','country' => 'Pais/Country','turn_id' => 'Actividad/Activity','services_id' => 'Servicios/Service','distribution_id' => 'Distribucion/Distribution',
             'training' => 'Capacitacion/Training','tradename' => 'Nombre comercial/Company Name','fvn' => 'RFC/VAT/NIF',
-            'address' => 'Direccion/Address', 'contact' => 'Contacto de compras/Purchasing Contact', 'phone' => 'Telefono', 'mail' => 'Correo',
-            'payments' => 'Contacto pagos', 'phonee' => 'Telefono', 'maill' => 'Correo', 'terms' => 'Condiciones de venta', 'credit' => 'Credito'];
+            'address' => 'Direccion/Address', 'contact' => 'Contacto de compras/Purchasing Contact', 'phone' => 'Telefono/Phone number', 'mail' => 'Correo/Email',
+            'payments' => 'Contacto de pagos/Payment Contact', 'phonee' => 'Telefono/Phone number', 'maill' => 'Correo/Email', 'terms' => 'Condiciones de venta', 'credit' => 'Credito'];
         $data = array();
         foreach (array_keys($values) as $key) {
             if (array_key_exists($key, $specialAttributes)) {
