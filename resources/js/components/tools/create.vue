@@ -19,20 +19,20 @@
                         <v-select v-else v-model.trim="tool.country" label="Pais/Country" :items="countrys" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.turn" label="Actividad" :items="turns" item-text="name" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.turn" label="Actividad" :items="turns" item-text="name" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.turn" label="Actividad/Activity" :items="turns" item-text="name" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.turn" label="Actividad/Activity" :items="turns" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Servicios" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.training" label="Servicios" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Servicios/Service" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.training" label="Servicios/Service" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.distribution" label="Distribucion" :items="distributions" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.distribution" label="Distribucion" :items="distributions" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.distribution" label="Distribucion/Distribution" :items="distributions" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.distribution" label="Distribucion/Distribution" :items="distributions" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Capacitacion" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.training" label="Capacitacion" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Capacitacion/Training" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.training" label="Capacitacion/Training" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
                 </div>
                 <div class="form-column">
