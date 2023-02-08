@@ -210,9 +210,9 @@ class ToolController extends Controller
 //        dd($values, $tool);
         $specialAttributes = ['country_id' => 'country','turn_id' => 'turn','services_id' => 'services','distribution_id' => 'distribution','training_id' => 'training'];
         $names = ['item' => 'Item','country' => 'Pais/Country','turn_id' => 'Actividad/Activity','services_id' => 'Servicios/Service','distribution_id' => 'Distribucion/Distribution',
-            'training' => 'Capacitacion/Training','tradename' => 'Nombre comercial/Company Name','fvn' => 'RFC/VAT/NIF',
-            'address' => 'Direccion/Address', 'contact' => 'Contacto de compras/Purchasing Contact', 'phone' => 'Telefono/Phone Number', 'mail' => 'Correo/Email',
-            'payments' => 'Contacto de pagos/Payment Contact', 'phonee' => 'Telefono/Phone Number', 'maill' => 'Correo/Email', 'terms' => 'Condiciones de venta/Sales Arrangement', 'credit' => 'Credito/Credit'];
+            'training' => 'Capacitacion/Training','tradename' => 'Nombre Comercial/Company Name','fvn' => 'RFC/VAT/NIF',
+            'address' => 'Direccion/Address', 'contact' => 'Contacto de Compras/Purchasing Contact', 'phone' => 'Telefono/Phone Number', 'mail' => 'Correo/Email',
+            'payments' => 'Contacto de Pagos/Payment Contact', 'phonee' => 'Telefono/Phone Number', 'maill' => 'Correo/Email', 'terms' => 'Condiciones de Venta/Sales Arrangement', 'credit' => 'Credito/Credit'];
         $data = array();
         foreach (array_keys($values) as $key) {
             if (array_key_exists($key, $specialAttributes)) {

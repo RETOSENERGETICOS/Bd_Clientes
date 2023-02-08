@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-column">
                     <div class="form-row">
-                        <v-text-field v-model="tool.tradename" label="Nombre comercial/Company Name" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.tradename" label="Nombre Comercial/Company Name" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
                         <v-text-field v-model="tool.fvn" label="RFC/VAT/NIF" :rules="[rules.required]"></v-text-field>
@@ -46,7 +46,7 @@
                         <v-text-field v-model="tool.address" label="Direccion/Address" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.contact" label="Contacto de compras/Purchasing Contact"></v-text-field>
+                        <v-text-field v-model="tool.contact" label="Contacto de Compras/Purchasing Contact"></v-text-field>
                     </div>
                    <div class="form-row">
                         <v-text-field v-model="tool.phone" label="Telefono/Phone Number" :rules="[rules.required]"></v-text-field>
@@ -57,7 +57,7 @@
                         <v-text-field v-model="tool.mail" label="Correo/Email" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.payments" label="Contacto de pagos/Payment Contact" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.payments" label="Contacto de Pagos/Payment Contact" :rules="[rules.required]"></v-text-field>
                     </div>
                      <div class="form-row">
                         <v-text-field v-model="tool.phonee" label="Telefono/Phone Number" :rules="[rules.required]"></v-text-field>
@@ -66,7 +66,7 @@
                         <v-text-field v-model="tool.maill" label="Correo/Email" :rules="[rules.required]"></v-text-field>
                     </div>
                      <div class="form-row">
-                        <v-text-field v-model="tool.terms" label="Condiciones de venta/Sales Arrangement" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.terms" label="Condiciones de Venta/Sales Arrangement" :rules="[rules.required]"></v-text-field>
                     </div>
                      <div class="form-row">
                         <v-text-field v-model="tool.credit" label="Credito/Credit" :rules="[rules.required]"></v-text-field>
