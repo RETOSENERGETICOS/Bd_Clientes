@@ -49,7 +49,7 @@
                         <v-text-field v-model="tool.contact" label="Contacto de compras/Purchasing Contact"></v-text-field>
                     </div>
                    <div class="form-row">
-                        <v-text-field v-model="tool.phone" label="Telefono/Phone number" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.phone" label="Telefono/Phone Number" :rules="[rules.required]"></v-text-field>
                     </div>
                 </div>
                 <div class="form-column">
@@ -60,7 +60,7 @@
                         <v-text-field v-model="tool.payments" label="Contacto de pagos/Payment Contact" :rules="[rules.required]"></v-text-field>
                     </div>
                      <div class="form-row">
-                        <v-text-field v-model="tool.phonee" label="Telefono/Phone number" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.phonee" label="Telefono/Phone Number" :rules="[rules.required]"></v-text-field>
                     </div>
                      <div class="form-row">
                         <v-text-field v-model="tool.maill" label="Correo/Email" :rules="[rules.required]"></v-text-field>

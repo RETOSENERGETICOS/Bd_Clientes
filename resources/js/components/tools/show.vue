@@ -50,7 +50,7 @@
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-text-field label="Telefono/Phone number" v-model="tool.phone" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Telefono/Phone Number" v-model="tool.phone" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="Correo/Email" v-model="tool.mail" :rules="[rules.required]"></v-text-field>
@@ -61,7 +61,7 @@
                         </v-row>
                         <v-row>
                            <v-col cols="4">
-                                <v-text-field label="Telefono/Phone number" v-model="tool.phonee" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Telefono/Phone Number" v-model="tool.phonee" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="Correo/Email" v-model="tool.maill" :rules="[rules.required]"></v-text-field>
