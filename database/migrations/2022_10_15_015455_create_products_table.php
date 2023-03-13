@@ -57,12 +57,12 @@ class CreateProductsTable extends Migration
             $table->string('fvn');
             $table->string('address');
             $table->string('contact');
-            $table->string('phone');
-            $table->string('phone1');
+            $table->decimal('phone');
+            $table->decimal('phone1');
             $table->string('mail');
             $table->string('payments');
-            $table->string('phonee');
-            $table->string('phonee1');
+            $table->decimal('phonee');
+            $table->decimal('phonee1');
             $table->string('maill');
             $table->string('terms');
             $table->string('credit');
