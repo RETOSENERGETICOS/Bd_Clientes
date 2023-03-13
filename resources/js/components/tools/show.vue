@@ -50,10 +50,10 @@
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-text-field label="Telefono Oficina" v-model="tool.phone" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Telefono Oficina/Office Phone" v-model="tool.phone" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Telefono Celular" v-model="tool.phone1" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Telefono Celular/Cell Phone" v-model="tool.phone1" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="Correo/Email" v-model="tool.mail" :rules="[rules.required]"></v-text-field>
@@ -64,10 +64,10 @@
                                 <v-text-field label="Contacto de Pagos/Payment Contact" v-model="tool.payments" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Telefono Oficina" v-model="tool.phonee" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Telefono Oficina/Office Phone" v-model="tool.phonee" :rules="[rules.required]"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Telefono Celular" v-model="tool.phonee2" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Telefono Celular/Cell Phone" v-model="tool.phonee2" :rules="[rules.required]"></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>
