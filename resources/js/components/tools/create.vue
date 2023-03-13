@@ -34,11 +34,11 @@
                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Capacitacion/Training" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
                         <v-select v-else v-model.trim="tool.training" label="Capacitacion/Training" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
                     </div>
-                </div>
-                <div class="form-column">
                     <div class="form-row">
                         <v-text-field v-model="tool.tradename" label="Nombre Comercial/Company Name" :rules="[rules.required]"></v-text-field>
                     </div>
+                </div>
+                <div class="form-column">
                     <div class="form-row">
                         <v-text-field v-model="tool.fvn" label="Razon Social/Business Name" :rules="[rules.required]"></v-text-field>
                     </div>
@@ -54,11 +54,11 @@
                     <div class="form-row">
                         <v-text-field v-model="tool.phone1" label="Telefono Celular/Cell Phone" :rules="[rules.required]"></v-text-field>
                     </div>
-                </div>
-                <div class="form-column">
                     <div class="form-row">
                         <v-text-field v-model="tool.mail" label="Correo/Email" :rules="[rules.required]"></v-text-field>
                     </div>
+                </div>
+                <div class="form-column">
                     <div class="form-row">
                         <v-text-field v-model="tool.payments" label="Contacto de Pagos/Payment Contact" :rules="[rules.required]"></v-text-field>
                     </div>
