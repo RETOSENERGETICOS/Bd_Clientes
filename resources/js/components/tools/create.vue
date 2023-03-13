@@ -40,7 +40,7 @@
                         <v-text-field v-model="tool.tradename" label="Nombre Comercial/Company Name" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.fvn" label="RFC/VAT/NIF" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.fvn" label="Razon Social/Business Name" :rules="[rules.required]"></v-text-field>
                     </div>
                     <div class="form-row">
                         <v-text-field v-model="tool.address" label="Direccion/Address" :rules="[rules.required]"></v-text-field>

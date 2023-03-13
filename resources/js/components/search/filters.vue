@@ -22,7 +22,7 @@
                     <v-col cols="4" v-if="filters.training.active"><v-select v-model="filter.training" label="Capacitacion/Capacitation" :items="trainings" item-text="name" return-object clearable></v-select></v-col>
                     
                     <v-col cols="4" v-if="filters.tradename.active"><v-text-field v-model="filter.tradename" label="Nombre Comercial/Company Name" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.fvn.active"><v-text-field v-model="filter.fvn" label="RFC/VAT/NIF" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.fvn.active"><v-text-field v-model="filter.fvn" label="Razon Social/Business Name" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.address.active"><v-text-field v-model="filter.address" label="Direccion/Address" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.contact.active"><v-text-field v-model="filter.contact" label="Contacto de Compras/Purchasing Contact" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.contact.active"><v-text-field v-model="filter.contact" label="Contacto de Compras/Purchasing Contact" clearable></v-text-field></v-col>
