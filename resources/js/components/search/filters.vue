@@ -25,12 +25,13 @@
                     <v-col cols="4" v-if="filters.fvn.active"><v-text-field v-model="filter.fvn" label="Razon Social/Business Name" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.address.active"><v-text-field v-model="filter.address" label="Direccion/Address" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.contact.active"><v-text-field v-model="filter.contact" label="Contacto de Compras/Purchasing Contact" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.contact.active"><v-text-field v-model="filter.contact" label="Contacto de Compras/Purchasing Contact" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.phone.active"><v-text-field v-model="filter.phone" label="Telefono Oficina" clearable></v-text-field></v-col>
                     
-                    <v-col cols="4" v-if="filters.phone.active"><v-text-field v-model="filter.phone" label="Telefono/Phone Number" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.phone1.active"><v-text-field v-model="filter.phone1" label="Telefono Celular" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.mail.active"><v-text-field v-model="filter.mail" label="Correo/Email" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.payments.active"><v-text-field v-model="filter.payments" label="Contacto de Pagos/Payment Contact" clearable></v-text-field></v-col>
-                    <v-col cols="4" v-if="filters.phonee.active"><v-text-field v-model="filter.phonee" label="Telefono/Phone Number" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.phonee.active"><v-text-field v-model="filter.phonee" label="Telefono Oficina" clearable></v-text-field></v-col>
+                    <v-col cols="4" v-if="filters.phonee2.active"><v-text-field v-model="filter.phonee2" label="Telefono Celular" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.maill.active"><v-text-field v-model="filter.maill" label="Correo/Email" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.terms.active"><v-text-field v-model="filter.terms" label="Condiciones de Venta/Sales Arrangement" clearable></v-text-field></v-col>
                     <v-col cols="4" v-if="filters.credit.active"><v-text-field v-model="filter.credit" label="Credito/Credit" clearable></v-text-field></v-col>
@@ -70,9 +71,11 @@ export default {
             address: null,
             contact: null,
             phone: null,
+            phone1: null,
             mail: null,
             payments: null,
             phonee: null,
+            phonee2: null,
             maill: null,
             terms:null,
             credit: null,

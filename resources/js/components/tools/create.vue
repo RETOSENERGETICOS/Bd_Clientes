@@ -49,7 +49,10 @@
                         <v-text-field v-model="tool.contact" label="Contacto de Compras/Purchasing Contact"></v-text-field>
                     </div>
                    <div class="form-row">
-                        <v-text-field v-model="tool.phone" label="Telefono/Phone Number" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.phone" label="Telefono Oficina" :rules="[rules.required]"></v-text-field>
+                    </div>
+                    <div class="form-row">
+                        <v-text-field v-model="tool.phone1" label="Telefono Celular" :rules="[rules.required]"></v-text-field>
                     </div>
                 </div>
                 <div class="form-column">
@@ -60,7 +63,10 @@
                         <v-text-field v-model="tool.payments" label="Contacto de Pagos/Payment Contact" :rules="[rules.required]"></v-text-field>
                     </div>
                      <div class="form-row">
-                        <v-text-field v-model="tool.phonee" label="Telefono/Phone Number" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.phonee" label="Telefono Oficina" :rules="[rules.required]"></v-text-field>
+                    </div>
+                    <div class="form-row">
+                        <v-text-field v-model="tool.phonee2" label="Telefono Celular" :rules="[rules.required]"></v-text-field>
                     </div>
                      <div class="form-row">
                         <v-text-field v-model="tool.maill" label="Correo/Email" :rules="[rules.required]"></v-text-field>
@@ -111,9 +117,11 @@ export default {
             address: null,
             contact: null,
             phone: null,
+            phone1: null,
             mail: null,
             payments: null,
             phonee: null,
+            phonee2: null,
             maill: null,
             terms: null,
             credit: null
@@ -161,9 +169,11 @@ export default {
                 address: null,
                 contact: null,
                 phone: null,
+                phone1: null,
                 mail: null,
                 payments: null,
                 phonee: null,
+                phonee2: null,
                 maill: null,
                 terms: null,
                 credit: null
