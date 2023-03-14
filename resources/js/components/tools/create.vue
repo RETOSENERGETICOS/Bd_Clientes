@@ -23,27 +23,27 @@
                         <v-select v-else v-model.trim="tool.turn" label="Actividad/Activity" :items="turns" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Servicios/Service" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.training" label="Servicios/Service" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Servicios/Service" :items="trainings" item-text="name" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.training" label="Servicios/Service" :items="trainings" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.distribution" label="Distribucion/Distribution" :items="distributions" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.distribution" label="Distribucion/Distribution" :items="distributions" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.distribution" label="Distribucion/Distribution" :items="distributions" item-text="name" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.distribution" label="Distribucion/Distribution" :items="distributions" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Capacitacion/Training" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.training" label="Capacitacion/Training" :items="trainings" item-text="name" :rules="[rules.required]" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Capacitacion/Training" :items="trainings" item-text="name" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.training" label="Capacitacion/Training" :items="trainings" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.tradename" label="Nombre Comercial/Company Name" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.tradename" label="Nombre Comercial/Company Name"></v-text-field>
                     </div>
                 </div>
                 <div class="form-column">
                     <div class="form-row">
-                        <v-text-field v-model="tool.fvn" label="Razon Social/Business Name" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.fvn" label="Razon Social/Business Name"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.address" label="Direccion/Address" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.address" label="Direccion/Address"></v-text-field>
                     </div>
                     <div class="form-row">
                         <v-text-field v-model="tool.contact" label="Contacto de Compras/Purchasing Contact"></v-text-field>
@@ -55,12 +55,12 @@
                         <v-text-field v-model.number="tool.phone1" label="Telefono Celular/Cell Phone" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.mail" label="Correo/Email" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.mail" label="Correo/Email"></v-text-field>
                     </div>
                 </div>
                 <div class="form-column">
                     <div class="form-row">
-                        <v-text-field v-model="tool.payments" label="Contacto de Pagos/Payment Contact" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.payments" label="Contacto de Pagos/Payment Contact"></v-text-field>
                     </div>
                      <div class="form-row">
                         <v-text-field v-model.number="tool.phonee" label="Telefono Oficina/Office Phone" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
@@ -69,13 +69,13 @@
                         <v-text-field v-model.number="tool.phonee2" label="Telefono Celular/Cell Phone" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
                     </div>
                      <div class="form-row">
-                        <v-text-field v-model="tool.maill" label="Correo/Email" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.maill" label="Correo/Email"></v-text-field>
                     </div>
                      <div class="form-row">
-                        <v-text-field v-model="tool.terms" label="Condiciones de Venta/Sales Arrangement" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.terms" label="Condiciones de Venta/Sales Arrangement"></v-text-field>
                     </div>
                      <div class="form-row">
-                        <v-text-field v-model="tool.credit" label="Credito/Credit" :rules="[rules.required]"></v-text-field>
+                        <v-text-field v-model="tool.credit" label="Credito/Credit"></v-text-field>
                     </div>
                 </div>
             </div>

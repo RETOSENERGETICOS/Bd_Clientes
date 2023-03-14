@@ -23,7 +23,7 @@
                                 <v-combobox label="Actividad/Activity" v-model="tool.turn" item-text="name" :items="turns" clearable item-value="name"></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-combobox label="Servicios/Services" v-model="tool.services" item-text="name" :items="servicess" :rules="[rules.required]" clearable item-value="name" disabled></v-combobox>
+                                <v-combobox label="Servicios/Services" v-model="tool.services" item-text="name" :items="servicess" clearable item-value="name" disabled></v-combobox>
                             </v-col>
                         </v-row>
                         <v-row>
@@ -34,15 +34,15 @@
                                 <v-combobox label="Capacitacion/Training" v-model="tool.training" item-text="name" :items="trainings" item-value="name" disabled></v-combobox>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Nombre Comercial/Company Name" v-model="tool.tradename" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Nombre Comercial/Company Name" v-model="tool.tradename"></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-text-field label="Razon Social/Business Name" v-model="tool.fvn" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Razon Social/Business Name" v-model="tool.fvn"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Direccion/Address" v-model="tool.address" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Direccion/Address" v-model="tool.address"></v-text-field>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="Contacto de Compras/Purchasing Contact" v-model="tool.contact"></v-text-field>
@@ -56,12 +56,12 @@
                                 <v-text-field label="Telefono Celular/Cell Phone" v-model.number="tool.phone1" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Correo/Email" v-model="tool.mail" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Correo/Email" v-model="tool.mail"></v-text-field>
                             </v-col>
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-text-field label="Contacto de Pagos/Payment Contact" v-model="tool.payments" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Contacto de Pagos/Payment Contact" v-model="tool.payments"></v-text-field>
                             </v-col>
                             <v-col cols="4">
                                 <v-text-field label="Telefono Oficina/Office Phone" v-model.number="tool.phonee" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
@@ -72,13 +72,13 @@
                         </v-row>
                         <v-row>
                             <v-col cols="4">
-                                <v-text-field label="Correo/Email" v-model="tool.maill" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Correo/Email" v-model="tool.maill"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Condiciones de Venta/Sales Arrangement" v-model="tool.terms" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Condiciones de Venta/Sales Arrangement" v-model="tool.terms"></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                <v-text-field label="Credito/Credit" v-model="tool.credit" :rules="[rules.required]"></v-text-field>
+                                <v-text-field label="Credito/Credit" v-model="tool.credit"></v-text-field>
                             </v-col>
                         </v-row>
                     </v-form>
