@@ -131,10 +131,7 @@ export default {
                     turn: this.tool.turn,
                     services: this.tool.services,
                     distribution: this.tool.distribution,
-                    training: this.tool.training,
-                    serial_number: this.tool.serial_number,
-                    calibration_expiration: this.tool.calibration_expiration,
-                    has_validation: this.tool.has_validation
+                    training: this.tool.training
                 }
                 this.$emit('updated', newItem)
                 this.show = false

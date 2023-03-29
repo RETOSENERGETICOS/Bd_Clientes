@@ -9,7 +9,6 @@ export default {
             services: { text: 'Servicios', value: 'services.name', active: true, key: 'services' },
             training: { text: 'Capacitacion', value: 'training.name', active: true, key: 'training' },
             tradename: { text: 'Nombre Comercial', value: 'tradename', active: false, key: 'tradename' },
-            bname: { text: 'Razon social', value: 'bname', active: false, key: 'bname' },
             fvn: { text: 'Razon Social/Business Name', value: 'fvn', active: false, key: 'fvn' },
             address: { text: 'Direccion', value: 'address', active: false, key: 'address' },
             contact: { text: 'Contacto Compras', value: 'contact', active: false, key: 'contact' },

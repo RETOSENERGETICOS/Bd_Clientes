@@ -3,15 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Brand;
-use App\Models\Family;
 use App\Models\Country;
 use App\Models\Turn;
 use App\Models\Services;
 use App\Models\Distribution;
 use App\Models\Training;
 use App\Models\File;
-use App\Models\Group;
 use App\Models\Log;
 use App\Models\Tool;
 use Illuminate\Support\Facades\DB;
@@ -32,7 +29,6 @@ class ToolController extends Controller
                     'id' => $tool->id,
                     'item' => $tool->item,
                     'country' => $tool->country,
-                    'measurement' => $tool->measurement,
                     'turn' => $tool->turn,
                     'services' => $tool->services,
                     'distribution' => $tool->distribution,
@@ -47,22 +43,20 @@ class ToolController extends Controller
             'id' => $tool->id,
             'item' => $tool->item,
             'country' => $tool->country,
-            'measurement' => $tool->measurement,
             'turn' => $tool->turn,
             'services' => $tool->services,
             'distribution' => $tool->distribution,
             'training' => $tool->training,
             'tradename' => $tool->tradename,
-            'bname' => $tool->bname,
             'fvn' => $tool->fvn,
             'address' => $tool->address,
             'contact' => $tool->contact,
-            'phoneofice' => $tool->phone,
-            'phonecel' => $tool->phone1,
+            'phone' => $tool->phone,
+            'phone1' => $tool->phone1,
             'mail' => $tool->mail,
             'payments' => $tool->payments,
-            'phoneeofice' => $tool->phonee,
-            'phoneecel' => $tool->phonee2,
+            'phonee' => $tool->phonee,
+            'phonee2' => $tool->phonee2,
             'maill' => $tool->maill,
             'terms' => $tool->terms,
             'credit' => $tool->credit,
@@ -144,16 +138,15 @@ class ToolController extends Controller
                     'distribution_id' => $distribution->id ?? null,
                     'training_id' => $training->id ?? null,
                     'tradename' => $request->tradename,
-                    'bname' => $request->bname,
                     'fvn' => $request->fvn,
                     'address' => $request->address,
                     'contact' => $request->contact,
-                    'phoneofice' => $tool->phone,
-                    'phonecel' => $tool->phone1,
+                    'phone' => $tool->phone,
+                    'phonel' => $tool->phone1,
                     'mail' => $request->mail,
                     'payments' => $request->payments,
-                    'phoneeofice' => $tool->phonee,
-                    'phoneecel' => $tool->phonee2,
+                    'phonee' => $tool->phonee,
+                    'phonee2' => $tool->phonee2,
                     'maill' => $request->maill,
                     'terms' => $request->terms,
                     'credit' => $request->credit,
@@ -184,7 +177,7 @@ class ToolController extends Controller
         $turn = $this->getTurn($request->turn);
         $services = $this->getServices($request->services);
         $distribution = $this->getDistribution($request->distribution);
-        $distribution = $this->getDistribution($request->distribution);
+        $country = $this->getCountry($request->country);
         $tool = $request->user()->tools()->create([
             'country_id' => $country->id ?? null,
             'turn_id' => $turn->id ?? null,
@@ -192,22 +185,21 @@ class ToolController extends Controller
             'distribution_id' => $distribution->id ?? null,
             'training_id' => $training->id ?? null,
             'tradename' => $request->tradename,
-            'bname' => $request->bname,
             'fvn' => $request->fvn,
             'address' => $request->address,
             'contact' => $request->contact,
-            'phoneofice' => $tool->phone,
-            'phonecel' => $tool->phone1,
+            'phone' => $tool->phone,
+            'phone1' => $tool->phone1,
             'mail' => $request->mail,
             'payments' => $request->payments,
-            'phoneeofice' => $tool->phonee,
-            'phoneecel' => $tool->phonee2,
+            'phonee' => $tool->phonee,
+            'phonee2' => $tool->phonee2,
             'maill' => $request->maill,
             'terms' => $request->terms,
             'credit' => $request->credit
         ]);
         $tool->update([
-            'item' => sprintf('CLT%04d', $tool->id)
+            'item' => sprintf('CLI%04d', $tool->id)
         ]);
         return $tool->refresh();
     }
@@ -217,8 +209,8 @@ class ToolController extends Controller
         $specialAttributes = ['country_id' => 'country','turn_id' => 'turn','services_id' => 'services','distribution_id' => 'distribution','training_id' => 'training'];
         $names = ['item' => 'Item','country' => 'Pais/Country','turn_id' => 'Actividad/Activity','services_id' => 'Servicios/Service','distribution_id' => 'Distribucion/Distribution',
             'training' => 'Capacitacion/Training','tradename' => 'Nombre Comercial/Company Name','fvn' => 'Razon Social/Business Name',
-            'address' => 'Direccion/Address', 'contact' => 'Contacto de Compras/Purchasing Contact', 'phoneofice' => 'Telefono Oficina/Office Phone', 'phonecel' => 'Telefono Celular/Cell Phone','mail' => 'Correo/Email',
-            'payments' => 'Contacto de Pagos/Payment Contact', 'phoneeofice' => 'Telefono Oficina/Office Phone', 'phoneecel' => 'Telefono Celular/Cell Phone', 'maill' => 'Correo/Email', 'terms' => 'Condiciones de Venta/Sales Arrangement', 'credit' => 'Credito/Credit'];
+            'address' => 'Direccion/Address', 'contact' => 'Contacto de Compras/Purchasing Contact', 'phone' => 'Telefono Oficina/Office Phone', 'phonel' => 'Telefono Celular/Cell Phone','mail' => 'Correo/Email',
+            'payments' => 'Contacto de Pagos/Payment Contact', 'phonee' => 'Telefono Oficina/Office Phone', 'phonee2' => 'Telefono Celular/Cell Phone', 'maill' => 'Correo/Email', 'terms' => 'Condiciones de Venta/Sales Arrangement', 'credit' => 'Credito/Credit'];
         $data = array();
         foreach (array_keys($values) as $key) {
             if (array_key_exists($key, $specialAttributes)) {
@@ -240,16 +232,15 @@ class ToolController extends Controller
             'distribution' => $tool->distribution,
             'training' => $tool->training,
             'tradename' => $tool->tradename,
-            'bname' => $tool->bname,
             'fvn' => $tool->fvn,
             'address' => $tool->address,
             'contact' => $tool->contact,
-            'phoneofice' => $tool->phone,
-            'phonecel' => $tool->phone1,
+            'phoneo' => $tool->phone,
+            'phonel' => $tool->phone1,
             'mail' => $tool->mail,
             'payments' => $tool->payments,
-            'phoneeofice' => $tool->phonee,
-            'phoneecel' => $tool->phonee2,
+            'phonee' => $tool->phonee,
+            'phonee2' => $tool->phonee2,
             'maill' => $tool->maill,
             'terms' => $tool->terms,
             'credit' => $tool->credit,

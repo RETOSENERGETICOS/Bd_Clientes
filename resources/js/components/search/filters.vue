@@ -66,7 +66,6 @@ export default {
             services: null,
             training: null,
             tradename: null,
-            bname: null,
             fvn: null,
             address: null,
             contact: null,

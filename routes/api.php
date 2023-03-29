@@ -7,8 +7,6 @@ use App\Http\Controllers\Api\{
     RoleController,
     UserController,
     ToolController,
-    GroupController,
-    FamilyController,
     CountryController,
     TurnController,
     ServicesController,

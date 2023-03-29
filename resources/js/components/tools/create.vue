@@ -2,29 +2,29 @@
     <div>
         <v-dialog v-model="active">
             <v-card>
-                <v-card-title>¿Está usted seguro de guardar?/Confirm?</v-card-title>
+                <v-card-title>Esta usted seguro?</v-card-title>
                 <v-card-actions>
-                    <v-btn color="success" text @click.prevent="createTool">Guardar/Save</v-btn>
-                    <v-btn color="error" text @click="active = false">Cancelar/Cancel</v-btn>
+                    <v-btn color="success" text @click.prevent="createTool">Guardar</v-btn>
+                    <v-btn color="error" text @click="active = false">Cancelar</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
         <v-snackbar v-model="snackbar.active" :color="snackbar.color" :timeout="1500" > {{ snackbar.message }}</v-snackbar>
-        <v-btn @click="active = true" :disabled="disabled" :loading="loading">Guardar/Save</v-btn>
+        <v-btn @click="active = true" :disabled="disabled" :loading="loading">Guardar</v-btn>
         <v-form v-model="valid">
             <div class="form-container">
                 <div class="form-column">
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.country" label="Pais/Country" :items="countrys" item-text="name" clearable item-value="name"></v-combobox>
+                       <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.country" label="Pais/Country" :items="countrys" item-text="name" clearable item-value="name"></v-combobox>
                         <v-select v-else v-model.trim="tool.country" label="Pais/Country" :items="countrys" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.turn" label="Actividad/Activity" :items="turns" item-text="name" clearable item-value="name"></v-combobox>
+                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.turn" label="Actividad/Activity" :items="turns" item-text="name" clearable item-value="name"></v-combobox>
                         <v-select v-else v-model.trim="tool.turn" label="Actividad/Activity" :items="turns" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
-                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.training" label="Servicios/Service" :items="trainings" item-text="name" clearable item-value="name"></v-combobox>
-                        <v-select v-else v-model.trim="tool.training" label="Servicios/Service" :items="trainings" item-text="name" clearable item-value="name"></v-select>
+                        <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.service" label="Servicios/Service" :items="services" item-text="name" clearable item-value="name"></v-combobox>
+                        <v-select v-else v-model.trim="tool.service" label="Servicios/Service" :items="services" item-text="name" clearable item-value="name"></v-select>
                     </div>
                     <div class="form-row">
                         <v-combobox v-if="verifyAccess([1])" v-model.trim="tool.distribution" label="Distribucion/Distribution" :items="distributions" item-text="name" clearable item-value="name"></v-combobox>
@@ -46,9 +46,9 @@
                         <v-text-field v-model="tool.address" label="Direccion/Address"></v-text-field>
                     </div>
                     <div class="form-row">
-                        <v-text-field v-model="tool.contact" label="Contacto de Compras/Purchasing Contact"></v-text-field>
+                        <v-text-field v-model="tool.contact" label="Contacto de Compras/Purchasing Contact"></v-text-field> 
                     </div>
-                   <div class="form-row">
+                    <div class="form-row">
                         <v-text-field v-model.number="tool.phone" label="Telefono Oficina/Office Phone" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
                     </div>
                     <div class="form-row">
@@ -62,19 +62,19 @@
                     <div class="form-row">
                         <v-text-field v-model="tool.payments" label="Contacto de Pagos/Payment Contact"></v-text-field>
                     </div>
-                     <div class="form-row">
+                    <div class="form-row">
                         <v-text-field v-model.number="tool.phonee" label="Telefono Oficina/Office Phone" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
                     </div>
                     <div class="form-row">
                         <v-text-field v-model.number="tool.phonee2" label="Telefono Celular/Cell Phone" :rules="[rules.required, v => v > 0 || 'Cantidad invalida']"></v-text-field>
                     </div>
-                     <div class="form-row">
+                    <div class="form-row">
                         <v-text-field v-model="tool.maill" label="Correo/Email"></v-text-field>
                     </div>
-                     <div class="form-row">
+                    <div class="form-row">
                         <v-text-field v-model="tool.terms" label="Condiciones de Venta/Sales Arrangement"></v-text-field>
                     </div>
-                     <div class="form-row">
+                    <div class="form-row">
                         <v-text-field v-model="tool.credit" label="Credito/Credit"></v-text-field>
                     </div>
                 </div>
@@ -111,10 +111,9 @@ export default {
             services: null,
             distribution: null,
             training: null,
-             tradename: null,
-            bname: null,
+            tradename: null,
             fvn: null,
-            address: null,
+            address: false,
             contact: null,
             phone: null,
             phone1: null,
@@ -158,25 +157,22 @@ export default {
         },
         clearForm() {
             this.tool = {
-                country: null,
-                turn: null,
-                services: null,
-                distribution: null,
-                training: null,
-                tradename: null,
-                bname: null,
-                fvn: null,
-                address: null,
-                contact: null,
-                phone: null,
-                phone1: null,
-                mail: null,
-                payments: null,
-                phonee: null,
-                phonee2: null,
-                maill: null,
-                terms: null,
-                credit: null
+                description: null,
+                group: null,
+                family: null,
+                brand: null,
+                model: null,
+                serial: null,
+                calibrationExpiration: null,
+                hasValidation: false,
+                mainLocalization: null,
+                shelfLocalization: null,
+                shelf: null,
+                measurement: null,
+                minStock: null,
+                quantity: null,
+                documents: [],
+                comments: null
             }
             this.$refs.documents.removeFiles()
         }
@@ -200,10 +196,10 @@ export default {
             }
         })
         await axios.get('/api/countrys', getToken()).then(response => this.countrys =  response.data )
-        await axios.get('/api/turns', getToken()).then(response => this.turns =  response.data )
-        await axios.get('/api/servicess', getToken()).then(response => this.servicess = response.data)
+        await axios.get('/api/turns', getToken()).then(response => this.turns = response.data)
+        await axios.get('/api/services', getToken()).then(response => this.services = response.data)
         await axios.get('/api/distributions', getToken()).then(response => this.distributions = response.data)
-        await axios.get('/api/trainings', getToken()).then(response => this.trainings = response.data)
+        await axios.get('/api/training', getToken()).then(response => this.training = response.data)
         this.loading = false
     },
     components: {

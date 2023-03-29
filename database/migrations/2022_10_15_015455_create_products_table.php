@@ -53,7 +53,6 @@ class CreateProductsTable extends Migration
             $table->foreignId('distribution_id')->constrained();
             $table->foreignId('training_id')->constrained();
             $table->string('tradename');
-            $table->string('bname');
             $table->string('fvn');
             $table->string('address');
             $table->string('contact');
