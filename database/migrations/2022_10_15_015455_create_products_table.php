@@ -61,7 +61,7 @@ class CreateProductsTable extends Migration
             $table->string('mail');
             $table->string('payments');
             $table->decimal('phonee');
-            $table->decimal('phonee1');
+            $table->decimal('phonee2');
             $table->string('maill');
             $table->string('terms');
             $table->string('credit');
